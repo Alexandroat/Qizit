@@ -1,0 +1,5 @@
+/Users/David/Desktop/Qizit/app/build/intermediates/classes/debug
+/Users/David/Desktop/Qizit/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-3a7dbd5c7ec6f0672da67ed7540522e94746840e.jar
+/Users/David/Desktop/Qizit/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-d9a5d7cfcadb599dcffefc7724398500cdb802a1.jar
+/Users/David/Desktop/Qizit/app/build/intermediates/pre-dexed/debug/classes-4070433c84746fb7a7f9edcf6636363e54bf8773.jar
+/Users/David/Desktop/Qizit/app/build/intermediates/pre-dexed/debug/classes-239016adff1a9d4383609214d1af4051aaf79223.jar
