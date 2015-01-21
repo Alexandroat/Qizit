@@ -10,68 +10,103 @@
     tools:context=".MainActivity"
     android:background="#ff5cffad">
 
-    <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:id="@+id/imageView13"
-        android:layout_marginTop="91dp"
-        android:src="@drawable/play"
-        android:layout_marginLeft="52dp"
-        android:layout_marginStart="52dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignRight="@+id/onePlayer"
+        android:layout_alignEnd="@+id/onePlayer"
+        android:layout_below="@+id/textView16">
 
-    <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:id="@+id/imageView14"
-        android:src="@drawable/racingflags"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/imageView13"
-        android:layout_alignStart="@+id/imageView13" />
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/icnPlay"
+            android:src="@drawable/play"
+            android:layout_below="@+id/textView16"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left|top" />
 
-    <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:id="@+id/imageView15"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/hourglass"
-        android:layout_below="@+id/imageView14"
-        android:layout_alignLeft="@+id/imageView14"
-        android:layout_alignStart="@+id/imageView14" />
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/icnMultiplayer"
+            android:src="@drawable/racingflags"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/icnPlay"
+            android:layout_alignStart="@+id/icnPlay"
+            android:layout_gravity="left|center_vertical" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/icnTime"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/hourglass"
+            android:layout_below="@+id/icnMultiplayer"
+            android:layout_alignLeft="@+id/icnMultiplayer"
+            android:layout_alignStart="@+id/icnMultiplayer"
+            android:layout_gravity="left|bottom" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/onePlayer"
+                android:id="@+id/onePlayer"
+                android:textSize="30sp"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="48dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginTop="39dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/multiplayer"
+                android:id="@+id/multiplayer"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/onePlayer"
+                android:layout_alignStart="@+id/onePlayer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/time"
+                android:id="@+id/time"
+                android:textSize="30sp"
+                android:layout_gravity="right|top"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/onePlayer"
+                android:layout_alignEnd="@+id/onePlayer"
+                android:layout_marginBottom="37dp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Multijugador"
-        android:id="@+id/textView15"
-        android:textSize="30sp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Un Jugador"
-        android:id="@+id/textView14"
-        android:textSize="30sp"
-        android:layout_alignBottom="@+id/imageView13"
-        android:layout_alignLeft="@+id/textView15"
-        android:layout_alignStart="@+id/textView15" />
-
-    <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido a QIZIT"
+        android:text="@string/welcome"
         android:id="@+id/textView16"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="25sp"
-        android:textColor="#ff060606" />
+        android:textColor="#ff060606"
+        android:layout_gravity="center_horizontal|top" />
 
 </RelativeLayout>
