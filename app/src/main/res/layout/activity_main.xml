@@ -14,8 +14,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignRight="@+id/onePlayer"
-        android:layout_alignEnd="@+id/onePlayer"
-        android:layout_below="@+id/textView16">
+        android:layout_below="@+id/textView16"
+        android:id="@+id/frameLayout">
 
         <ImageView
             android:layout_width="90dp"
