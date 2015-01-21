@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.alex.qizit.Home"
     android:background="#ff5cffad"
-    android:id="@+id/">
+    android:id="@+id/RelativeLayout">
 
     <ImageView
         android:layout_width="80dp"
