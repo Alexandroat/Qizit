@@ -1,11 +1,15 @@
 package com.example.alex.qizit;
 
-import android.graphics.Typeface;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Toast;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 //eo
 public class MainActivity extends ActionBarActivity {
@@ -15,6 +19,15 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "5zohRT0Y9fHewm7K8n79ZNHIL50lpcKWyQvXcBh3", "Hlb0Vrrwccpqw4xT0XssnY6N52HgwSuoqVaDEZ5u");
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
     }
 
 
@@ -38,5 +51,15 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void testclick1(View v){
+        Context context = getApplicationContext();
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+//a
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }
