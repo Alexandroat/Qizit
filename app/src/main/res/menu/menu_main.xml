@@ -1,6 +1,15 @@
+
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    <item android:id="@+id/action_settings" android:title="Ajustes"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/Progress" android:title="Progresos"
+        app:showAsAction="never" />
+    <item android:id="@+id/How_Play" android:title="Cómo Jugar"
+        app:showAsAction="never" />
+    <item android:id="@+id/About_us" android:title="Sobre Nosotros"
+
+        app:showAsAction="never" />
 </menu>
