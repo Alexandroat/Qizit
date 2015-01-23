@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_ajustes">Ajustes</string>
-    <string name="onePlayer">Un Jugaor</string>
+    <string name="onePlayer">Un Jugador</string>
     <string name="multiplayer">Multijugador</string>
     <string name="time">Tiempo</string>
     <string name="welcome">Bienvenido a Qizit</string>
