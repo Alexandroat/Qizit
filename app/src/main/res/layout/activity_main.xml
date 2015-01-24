@@ -20,12 +20,6 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="90sp"
@@ -123,10 +117,5 @@
         android:textSize="25sp"
         android:textColor="#ff060606"
         android:layout_gravity="center_horizontal|top" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"></LinearLayout>
 
 </FrameLayout>
