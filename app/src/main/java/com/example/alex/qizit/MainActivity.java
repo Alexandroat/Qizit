@@ -5,16 +5,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TableRow;
 import android.widget.TextView;
 
-//eo
 public class MainActivity extends ActionBarActivity {
 
-
+    TableRow button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        button = (TableRow) findViewById(R.id.btnOnePlayer);
+    }
+
+    public void OnClick (View v){
+       System.out.println("ok");
     }
 
 
