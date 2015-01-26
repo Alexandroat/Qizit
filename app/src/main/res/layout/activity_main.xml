@@ -11,7 +11,7 @@
 
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="274sp"
         android:paddingTop="40dp"
         android:layout_gravity="center">
 
@@ -51,7 +51,9 @@
 
         <TableRow
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:id="@+id/btnMultiplayer"
+            android:onClick="OnClick">
 
             <ImageView
                 android:layout_width="90sp"
@@ -79,7 +81,9 @@
 
         <TableRow
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:id="@+id/btnTime"
+            android:onClick="OnClick">
 
             <ImageView
                 android:layout_width="90sp"

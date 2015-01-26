@@ -1,17 +1,17 @@
 package com.example.alex.qizit;
 
-import android.graphics.Typeface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TableRow;
-import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
     TableRow button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +19,10 @@ public class MainActivity extends ActionBarActivity {
         button = (TableRow) findViewById(R.id.btnOnePlayer);
     }
 
-    public void OnClick (View v){
-       System.out.println("ok");
+    public void OnClick(View v) {
+
+        Intent categories = new Intent().setClass(MainActivity.this, Categories.class);
+        startActivity(categories);
     }
 
 
@@ -40,6 +42,8 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent settings = new Intent().setClass(MainActivity.this, OptionsMenu.class);
+            startActivity(settings);
             return true;
         }
 
