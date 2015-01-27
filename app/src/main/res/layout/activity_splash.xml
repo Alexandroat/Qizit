@@ -10,7 +10,6 @@
         android:scaleType="fitXY"
         android:src="@drawable/splash_qizit"
          />
-
     <ProgressBar
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
