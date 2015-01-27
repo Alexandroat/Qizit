@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.ProgressBar;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -18,6 +19,7 @@ import static android.view.Window.FEATURE_NO_TITLE;
 public class Splash extends ActionBarActivity {
     //duration of the splash screen
     private static final long SPLASH_SCREEN = 3000;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class Splash extends ActionBarActivity {
         setContentView(R.layout.activity_splash);
         //portrait orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+        progressBar = (ProgressBar) findViewById(R.id.progressBarSplash);
 
         //requestWindowFeature(FEATURE_NO_TITLE);
 
@@ -38,6 +40,7 @@ public class Splash extends ActionBarActivity {
         @Override
         public void run() {
             Intent mainIntent = new Intent().setClass(Splash.this, MainActivity.class);
+
             startActivity(mainIntent);
             finish();
 

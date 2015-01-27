@@ -6,13 +6,13 @@
     <string name="action_progress">Progresos</string>
     <string name="action_howToPlay">Cómo Jugar</string>
     <string name="action_aboutUs">Sobre Nosotros</string>
-
     <string name="title_activity_home">Home</string>
     <string name="title_activity_settings">Ajustes</string>
     <string name="onePlayer">Un Jugador</string>
     <string name="multiplayer">Multijugador</string>
     <string name="time">Tiempo</string>
     <string name="welcome">Bienvenido a Qizit</string>
-
+    <string name="title_activity_progress">Progress</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
