@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.ContentResolver;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -57,6 +58,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -323,6 +325,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             if (success) {
                 finish();
+
+                // Cambio introducido
+                Intent main = new Intent().setClass(LoginActivity.this, MainActivity.class);
+                startActivity(main);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
