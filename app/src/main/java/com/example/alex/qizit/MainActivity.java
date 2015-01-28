@@ -10,13 +10,25 @@ import android.widget.TableRow;
 
 public class MainActivity extends ActionBarActivity {
 
-    TableRow button;
+    private TableRow button;
+    // Cambio introducido
+    private boolean isLogged = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = (TableRow) findViewById(R.id.btnOnePlayer);
+        // Cambio introducido
+        if (isLogged == false) {
+            Intent login = new Intent().setClass(MainActivity.this, LoginActivity.class);
+            login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(login);
+            isLogged = true;
+        }
+
     }
 
     public void OnClick(View v) {
