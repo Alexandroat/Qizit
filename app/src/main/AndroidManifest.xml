@@ -34,10 +34,6 @@
             android:name=".OptionsMenu"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".Progress"
-            android:label="@string/title_activity_progress" >
-        </activity>
-        <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateVisible" >

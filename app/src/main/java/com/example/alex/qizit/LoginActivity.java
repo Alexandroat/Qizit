@@ -9,12 +9,14 @@ import android.content.ContentResolver;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build.VERSION;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -324,11 +326,23 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(false);
 
             if (success) {
+
+
+                // TODO: Cambio introducido (Borrar cuando tengamos el Parser funcionando)
+                Intent main = new Intent().setClass(LoginActivity.this, MainActivity.class);
+
+                SharedPreferences miPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+
+                SharedPreferences.Editor miPrefEditor = miPref.edit();
+
+                miPrefEditor.putBoolean("isLogged",true).apply();
+
+                startActivity(main);
+
+
                 finish();
 
-                // Cambio introducido
-                Intent main = new Intent().setClass(LoginActivity.this, MainActivity.class);
-                startActivity(main);
+
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
