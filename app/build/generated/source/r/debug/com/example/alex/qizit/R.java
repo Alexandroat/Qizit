@@ -1329,12 +1329,11 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f08002e;
         public static final int action_mode_bar_stub=0x7f08002d;
         public static final int action_mode_close_button=0x7f080020;
-        public static final int action_settings=0x7f08006b;
+        public static final int action_settings=0x7f08006a;
         public static final int activity_chooser_view_content=0x7f080021;
         public static final int always=0x7f080016;
         public static final int beginning=0x7f080013;
         public static final int button=0x7f080045;
-        public static final int button2=0x7f080061;
         public static final int checkbox=0x7f080029;
         public static final int collapseActionView=0x7f080017;
         public static final int decor_content_parent=0x7f08002f;
@@ -1345,7 +1344,7 @@ containing a value of this type.
         public static final int editText=0x7f080056;
         public static final int editText2=0x7f080058;
         public static final int edit_query=0x7f080033;
-        public static final int email=0x7f080069;
+        public static final int email=0x7f080068;
         public static final int end=0x7f080014;
         public static final int enter=0x7f08005a;
         public static final int expand_activities_button=0x7f080022;
@@ -1353,8 +1352,8 @@ containing a value of this type.
         public static final int home=0x7f080004;
         public static final int homeAsUp=0x7f08000d;
         public static final int icon=0x7f080026;
-        public static final int idLinearLayout=0x7f080063;
-        public static final int idRelativeLayout=0x7f080062;
+        public static final int idLinearLayout=0x7f080062;
+        public static final int idRelativeLayout=0x7f080061;
         public static final int ifRoom=0x7f080018;
         public static final int image=0x7f080023;
         public static final int imageView=0x7f08004d;
@@ -1376,18 +1375,18 @@ containing a value of this type.
         public static final int list_item=0x7f080025;
         public static final int logear=0x7f080053;
         public static final int login=0x7f080054;
-        public static final int mail=0x7f08006a;
+        public static final int mail=0x7f080069;
         public static final int middle=0x7f080015;
         public static final int never=0x7f080019;
         public static final int newuser=0x7f080059;
         public static final int none=0x7f08000e;
         public static final int normal=0x7f08000a;
-        public static final int pass=0x7f080068;
-        public static final int password=0x7f080067;
+        public static final int pass=0x7f080067;
+        public static final int password=0x7f080066;
         public static final int progress_circular=0x7f080005;
         public static final int progress_horizontal=0x7f080006;
         public static final int radio=0x7f08002b;
-        public static final int register1=0x7f080064;
+        public static final int register1=0x7f080063;
         public static final int search_badge=0x7f080035;
         public static final int search_bar=0x7f080034;
         public static final int search_button=0x7f080036;
@@ -1420,8 +1419,8 @@ containing a value of this type.
         public static final int title=0x7f080027;
         public static final int up=0x7f080008;
         public static final int useLogo=0x7f080012;
-        public static final int user=0x7f080065;
-        public static final int username=0x7f080066;
+        public static final int user=0x7f080064;
+        public static final int username=0x7f080065;
         public static final int withText=0x7f08001a;
         public static final int wrap_content=0x7f08001d;
     }

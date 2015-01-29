@@ -1,9 +1,0 @@
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\classes\debug
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-9860acafee651f233bb3c00b70a4897f4d8b7004.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-e8759b00e6bd4430fc052f158065361ea5bc2e72.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\ParseCrashReporting-1.8.1-318a51b60016ff90ac6b75f1a3989e67a01c3892.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-0b828c6c80289a35b95dc73f11df5f3237383d46.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-javadoc-f17928484090aea9cfe8bfae728a139accbb1bce.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\classes-2ef02a9a4e3614777e46df01a8cf2d145293ba84.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\Parse-1.8.1-9a2ac1df718500dd453690d6c22ad1d55f657458.jar
-C:\Users\karlosc\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\classes-73c761e106b904f91e78c3f0066ae828eeaf22a2.jar
