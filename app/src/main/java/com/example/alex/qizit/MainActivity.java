@@ -1,35 +1,43 @@
 package com.example.alex.qizit;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TableRow;
+import android.widget.Toast;
+
+import com.parse.ParseUser;
 
 public class MainActivity extends ActionBarActivity {
 
+    static final int RESULT_CODE_LOGIN = 0;
     private TableRow button;
     // Cambio introducido
     private boolean isLogged = false;
-    static final int RESULT_CODE_LOGIN = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (TableRow) findViewById(R.id.btnOnePlayer);
-        // TODO: Cambio introducido (Cambiar cuando tengamos el Parser Funcionando)
 
-        SharedPreferences miPref = PreferenceManager.getDefaultSharedPreferences(this);
 
-        isLogged = miPref.getBoolean("isLogged",false);
-
-        openLogin();
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            // do stuff with the user
+            Toast toast = Toast.makeText(getApplicationContext(), "yes logged", Toast.LENGTH_SHORT);
+            toast.show();
+        } else {
+            // show the signup or login screen
+            Toast toast = Toast.makeText(getApplicationContext(), "no logged", Toast.LENGTH_SHORT);
+            toast.show();
+            Intent login = new Intent().setClass(MainActivity.this, LoginActivity.class);
+            login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            login.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(login);
+        }
 
 
     }
@@ -70,6 +78,12 @@ public class MainActivity extends ActionBarActivity {
             startActivity(settings);
             return true;
         }
+        if (id == R.id.logout) {
+            ParseUser.logOut();
+            finish();
+
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

@@ -17,5 +17,6 @@
     <string name="restartScoresBtn">Restablecer Puntuaciones</string>
     <string name="restartScores">Eliminará todas las puntuaciones guardadas</string>
     <string name="btnDelete">Eliminar</string>
-
+    <string name="menu_logout_text">Log Out</string>
+    <string name="title_activity_signup">Sign Up</string>
 </resources>
