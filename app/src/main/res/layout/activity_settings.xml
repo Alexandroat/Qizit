@@ -7,13 +7,13 @@
     tools:context="com.example.alex.qizit.OptionsMenu"
     android:background="#ff5cffad"
     android:id="@+id/prueba">
-<!--Commetn-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/soundOption"
         android:id="@+id/textView9"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/vibrationOption"
         android:id="@+id/textView10"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -55,23 +55,19 @@
         android:layout_height="wrap_content"
         android:text="@string/restartScores"
         android:id="@+id/textView11"
-        android:textSize="50sp"
-        android:layout_above="@+id/textView12"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:textSize="30sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/restartScoresInf"
         android:id="@+id/textView12"
-        android:textSize="37sp"
-        android:layout_above="@+id/button"
+        android:textSize="17sp"
+        android:layout_below="@+id/textView11"
         android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11"
-        android:layout_marginBottom="49dp"
-        android:layout_alignRight="@+id/textView11"
-        android:layout_alignEnd="@+id/textView11" />
+        android:layout_alignStart="@+id/textView11" />
 
     <Button
 
@@ -83,7 +79,6 @@
         android:background="#9bff2523"
         android:focusable="false"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="48dp"
         android:layout_alignLeft="@+id/textView12"
         android:layout_alignStart="@+id/textView12"
         android:layout_alignRight="@+id/textView11"
