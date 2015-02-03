@@ -22,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         button = (TableRow) findViewById(R.id.btnOnePlayer);
         // TODO: Cambio introducido (Cambiar cuando tengamos el Parser Funcionando)
 
@@ -74,20 +75,4 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-   /* @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == RESULT_CODE_LOGIN){
-            if(resultCode==RESULT_OK){
-
-                if (data.getData().toString().equals("true")) isLogged = true;
-                else isLogged = false;
-            }
-            else{
-
-            }
-        }
-
-    }*/
 }
