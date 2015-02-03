@@ -1,8 +1,6 @@
 package com.example.alex.qizit;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +13,6 @@ public class MainActivity extends ActionBarActivity {
     private TableRow button;
     // Cambio introducido
     private boolean isLogged = false;
-    static final int RESULT_CODE_LOGIN = 0;
 
 
     @Override
@@ -23,24 +20,15 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = (TableRow) findViewById(R.id.btnOnePlayer);
-        // TODO: Cambio introducido (Cambiar cuando tengamos el Parser Funcionando)
-
-        SharedPreferences miPref = PreferenceManager.getDefaultSharedPreferences(this);
-
-        isLogged = miPref.getBoolean("isLogged",false);
-
-        openLogin();
-
-
-    }
-
-    public void openLogin (){
-        if (!isLogged) {
+        // Cambio introducido
+        if (isLogged == false) {
             Intent login = new Intent().setClass(MainActivity.this, LoginActivity.class);
             login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            login.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(login);
+            isLogged = true;
         }
+
     }
 
     public void OnClick(View v) {
@@ -73,21 +61,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-   /* @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == RESULT_CODE_LOGIN){
-            if(resultCode==RESULT_OK){
-
-                if (data.getData().toString().equals("true")) isLogged = true;
-                else isLogged = false;
-            }
-            else{
-
-            }
-        }
-
-    }*/
 }

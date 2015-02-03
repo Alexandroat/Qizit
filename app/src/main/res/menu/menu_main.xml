@@ -8,15 +8,15 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/Progress"
+        android:id="@+id/progress"
         android:title="@string/action_progress"
         app:showAsAction="never" />
     <item
-        android:id="@+id/How_Play"
+        android:id="@+id/how_play"
         android:title="@string/action_howToPlay"
         app:showAsAction="never" />
     <item
-        android:id="@+id/About_us"
+        android:id="@+id/about_us"
         android:title="@string/action_aboutUs"
 
         app:showAsAction="never" />

@@ -24,15 +24,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".Categories"
             android:label="@string/title_activity_home"
             android:parentActivityName=".MainActivity" >
+
         </activity>
         <activity
             android:name=".OptionsMenu"
             android:label="@string/title_activity_settings" />
+
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
