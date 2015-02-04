@@ -14,9 +14,11 @@
     <string name="welcome">Bienvenido a Qizit</string>
     <string name="title_activity_progress">Progress</string>
 
-    <string name="restartScoresBtn">Restablecer Puntuaciones</string>
-    <string name="restartScores">Eliminará todas las puntuaciones guardadas</string>
+    <string name="restartScores">Restablecer Puntuaciones</string>
+    <string name="restartScoresInf">Eliminará todas las puntuaciones guardadas</string>
     <string name="btnDelete">Eliminar</string>
     <string name="menu_logout_text">Log Out</string>
     <string name="title_activity_signup">Sign Up</string>
+    <string name="vibrationOption">Vibración</string>
+    <string name="soundOption">Sonido</string>
 </resources>

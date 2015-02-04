@@ -7,14 +7,13 @@
     tools:context="com.example.alex.qizit.OptionsMenu"
     android:background="#ff5cffad"
     android:id="@+id/prueba">
-
+<!--Commetn-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sonido"
-        android:id="@+id/textView9"
-        android:layout_marginTop="90dp"
-        android:textSize="30sp"
+        android:text="@string/soundOption"
+        android:id="@+id/soundOpt"
+        android:textSize="50sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -22,19 +21,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vibración"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/textView9"
+        android:text="@string/vibrationOption"
+        android:id="@+id/vibrationOpt"
+        android:textSize="50sp"
+        android:layout_below="@+id/soundOpt"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="47dp"
-        android:textSize="30sp" />
+        android:layout_alignParentStart="true" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch1"
-        android:layout_alignBottom="@+id/textView9"
+        android:layout_alignBottom="@+id/soundOpt"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="49dp"
@@ -46,50 +44,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch2"
-        android:layout_alignBottom="@+id/textView10"
-        android:layout_alignLeft="@+id/switch1"
-        android:layout_alignStart="@+id/switch1"
         tools:ignore="NewApi"
-        android:checked="false" />
+        android:checked="false"
+        android:layout_below="@+id/switch1"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Restablecer Puntuaciones"
-        android:id="@+id/textView11"
-        android:textSize="30sp"
-        android:layout_centerVertical="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eliminará todas las puntuaciones guardadas"
-        android:id="@+id/textView12"
-        android:layout_below="@+id/textView11"
+        android:text="@string/restartScores"
+        android:id="@+id/restartScores"
+        android:textSize="50sp"
+        android:layout_above="@+id/restartScoresInf"
         android:layout_centerHorizontal="true"
-        android:textSize="17sp" />
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/restartScoresInf"
+        android:id="@+id/restartScoresInf"
+        android:textSize="37sp"
+        android:layout_above="@+id/buttonDelete"
+        android:layout_alignLeft="@+id/restartScores"
+        android:layout_alignStart="@+id/restartScores"
+        android:layout_marginBottom="49dp"
+        android:layout_alignRight="@+id/restartScores"
+        android:layout_alignEnd="@+id/restartScores" />
 
     <Button
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar"
-        android:id="@+id/button"
+        android:text="@string/btnDelete"
+        android:id="@+id/buttonDelete"
         android:textColor="#f8010302"
         android:background="#9bff2523"
         android:focusable="false"
-        android:layout_marginTop="66dp"
-        android:layout_below="@+id/textView12"
-        android:layout_centerHorizontal="true" />
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="809dp"
-        android:layout_marginStart="809dp"
-        android:layout_marginTop="533dp"></RelativeLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:layout_alignLeft="@+id/restartScoresInf"
+        android:layout_alignStart="@+id/restartScoresInf"
+        android:layout_alignRight="@+id/restartScores"
+        android:layout_alignEnd="@+id/restartScores" />
 
 </RelativeLayout>

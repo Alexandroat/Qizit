@@ -40,6 +40,8 @@ public class LoginActivity extends Activity {
                     public void done(ParseUser user, ParseException e) {
                         if (user != null) {
                             // Hooray! The user is logged in.
+                            Intent main = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(main);
                             Toast toast = Toast.makeText(getApplicationContext(), "Login OK", Toast.LENGTH_SHORT);
                             toast.show();
                             finish();

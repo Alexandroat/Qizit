@@ -3,15 +3,14 @@
     xmlns:font="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quizbackgroundblue"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-
+    android:background="@drawable/quizbackgroundblue"
     tools:context=".MainActivity">
 
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="274sp"
+        android:layout_height="352dp"
         android:paddingTop="40dp"
         android:layout_gravity="center">
 
@@ -21,14 +20,13 @@
             android:id="@+id/btnOnePlayer"
             android:nestedScrollingEnabled="true"
             android:background="@drawable/quizbuttongreen"
-
             android:onClick="OnClick"
             android:measureWithLargestChild="true"
             android:paddingBottom="10sp">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
+                android:layout_height="90sp"
                 android:id="@+id/icnPlay"
                 android:src="@drawable/play"
                 android:layout_below="@+id/textView16"
@@ -41,13 +39,14 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/onePlayer"
                 android:id="@+id/onePlayer"
-                android:textSize="30sp"
+                android:textSize="50sp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_column="2"
                 android:gravity="center_vertical"
-                android:layout_gravity="center" />
+                android:layout_gravity="center|left|right"
+                android:layout_marginLeft="100dp" />
         </TableRow>
 
         <TableRow
@@ -55,14 +54,13 @@
             android:layout_height="fill_parent"
             android:id="@+id/btnMultiplayer"
             android:background="@drawable/quizbuttongreen"
-
             android:onClick="OnClick"
             android:paddingBottom="10sp"
             android:paddingTop="10sp">
 
             <ImageView
                 android:layout_width="90sp"
-                android:layout_height="60sp"
+                android:layout_height="90sp"
                 android:id="@+id/icnMultiplayer"
                 android:src="@drawable/racingflags"
 
@@ -73,12 +71,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/multiplayer"
                 android:id="@+id/multiplayer"
-                android:textSize="30sp"
-                android:layout_gravity="center"
+                android:textSize="50sp"
+                android:layout_gravity="center|left"
                 android:layout_centerVertical="true"
                 android:layout_alignLeft="@+id/onePlayer"
                 android:layout_alignStart="@+id/onePlayer"
-                android:layout_column="2" />
+                android:layout_column="2"
+                android:layout_marginLeft="100dp" />
         </TableRow>
 
         <TableRow
@@ -86,21 +85,20 @@
             android:layout_height="fill_parent"
             android:id="@+id/btnTime"
             android:background="@drawable/quizbuttongreen"
-
             android:onClick="OnClick"
             android:paddingBottom="10sp"
             android:paddingTop="10sp">
 
             <ImageView
-                android:layout_width="90sp"
-                android:layout_height="60sp"
+                android:layout_width="match_parent"
+                android:layout_height="90sp"
                 android:id="@+id/icnTime"
                 android:src="@drawable/hourglass"
                 android:layout_below="@+id/icnMultiplayer"
                 android:layout_alignLeft="@+id/icnMultiplayer"
                 android:layout_alignStart="@+id/icnMultiplayer"
                 android:layout_column="1"
-                />
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,12 +106,13 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/time"
                 android:id="@+id/time"
-                android:textSize="30sp"
+                android:textSize="50sp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/multiplayer"
                 android:layout_alignStart="@+id/multiplayer"
                 android:layout_column="2"
-                android:layout_gravity="center" />
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="100dp" />
         </TableRow>
 
     </TableLayout>
@@ -127,7 +126,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="25sp"
+        android:textSize="45sp"
         android:textColor="#ff060606"
         android:layout_gravity="center_horizontal|top" />
 
