@@ -1,6 +1,7 @@
 package com.example.alex.qizit;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -58,6 +59,29 @@ public class SignUpActivity extends Activity {
     }
 
     public void showLoginActivity(View view) {
+
+
+
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            // do stuff with the user
+            Toast toast = Toast.makeText(getApplicationContext(), "yes logged", Toast.LENGTH_SHORT);
+            toast.show();
+        } else {
+            // show the signup or login screen
+            Toast toast = Toast.makeText(getApplicationContext(), "no logged", Toast.LENGTH_SHORT);
+            toast.show();
+            Intent signup = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(signup);
+
+        }
+
+
+
+
+
+
 
         finish();
 

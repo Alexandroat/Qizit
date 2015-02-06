@@ -31,18 +31,23 @@
         <activity
             android:name=".Categories"
             android:label="@string/title_activity_home"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+            </activity>
         <activity
             android:name=".OptionsMenu"
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:windowSoftInputMode="adjustResize|stateVisible"></activity>
+            android:windowSoftInputMode="adjustResize|stateVisible">
+            </activity>
         <activity
+            android:theme="@style/testing"
             android:name=".SignUpActivity"
             android:label="@string/title_activity_signup"
-            android:windowSoftInputMode="adjustResize|stateVisible"></activity>
+            android:windowSoftInputMode="adjustResize|stateVisible">
+
+            </activity>
     </application>
 
 </manifest>

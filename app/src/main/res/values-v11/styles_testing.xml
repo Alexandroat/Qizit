@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Buttontesting" parent="android:Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/testing_btn_default_holo_light</item>
+    </style>
+
+    <style name="ImageButtontesting" parent="android:Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/testing_btn_default_holo_light</item>
+    </style>
+</resources>

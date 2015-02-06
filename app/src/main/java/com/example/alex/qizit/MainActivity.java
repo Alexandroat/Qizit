@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
             toast.show();
             Intent login = new Intent().setClass(MainActivity.this, LoginActivity.class);
             login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            login.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(login);
         }
 

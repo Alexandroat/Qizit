@@ -43,6 +43,8 @@ public class LoginActivity extends Activity {
                             Toast toast = Toast.makeText(getApplicationContext(), "Login OK", Toast.LENGTH_SHORT);
                             toast.show();
                             finish();
+                            Intent signup = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(signup);
 
                         } else {
                             // Signup failed.
