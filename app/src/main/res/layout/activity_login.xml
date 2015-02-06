@@ -37,24 +37,22 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@drawable/redondear_buttons"
             android:id="@+id/loginButton"
             android:onClick="LoginIntoParse"
             android:text="login"
-            style="@style/style_botones" />
+            style="@style/style_botones"
+            android:layout_marginTop="20dp" />
 
         <Button
+            android:background="@drawable/redondear_buttons"
             android:id="@+id/signUpButton"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_below="@+id/loginButton"
-            android:layout_toEndOf="@+id/passWordTextView"
-            android:layout_toRightOf="@+id/passWordTextView"
-            android:gravity="center"
+            style="@style/style_botones"
             android:onClick="ShowSignUpActivity"
             android:text="Sign Up"
             android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_weight="1.95"
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 </RelativeLayout>
