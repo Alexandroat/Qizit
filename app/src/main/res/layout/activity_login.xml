@@ -17,24 +17,15 @@
 
         <EditText
             android:id="@+id/userNameEditText"
-            android:text="user"
+            android:hint="Introduzca un usuario"
             style="@style/EditText_style" />
 
         <EditText
             android:id="@+id/passWordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_alignLeft="@+id/passWordTextView"
-            android:layout_alignStart="@+id/passWordTextView"
-            android:layout_below="@+id/passWordTextView"
-            android:layout_weight="0.10"
-            android:clickable="true"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="textPassword"
-            android:padding="10sp"
-            android:text="pass"
-            android:textSize="30sp" />
+            android:hint="Introduzca una contraseña"
+            style="@style/EditText_style"
+
+             />
 
         <Button
             android:background="@drawable/redondear_buttons"
@@ -50,8 +41,6 @@
             style="@style/style_botones"
             android:onClick="ShowSignUpActivity"
             android:text="Sign Up"
-            android:textAlignment="center"
-            android:layout_weight="1.95"
             android:layout_marginTop="20dp" />
 
     </LinearLayout>
