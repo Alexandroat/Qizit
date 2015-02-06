@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="buttonColor" parent="@style/_buttonColor"/>
+
+  <style name="_buttonColor" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <item name="android:buttonStyle">@style/ButtonbuttonColor</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonbuttonColor</item>
+
+  </style>
+
+</resources>

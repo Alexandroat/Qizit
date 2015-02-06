@@ -1,82 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/idLoginRelative"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ff5cffad"
-    android:gravity="center|center_vertical|center_horizontal"
-    android:orientation="vertical">
+    style="@style/loginSingUp_style">
 
     <LinearLayout
         android:id="@+id/idLoginLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="1">
 
         <EditText
             android:id="@+id/userNameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_alignLeft="@+id/userNameTextView"
-            android:layout_alignStart="@+id/userNameTextView"
-            android:layout_below="@+id/userNameTextView"
-            android:layout_marginTop="20sp"
-            android:layout_weight="0.10"
-            android:clickable="true"
-            android:ems="10"
-            android:gravity="center"
             android:inputType="textPersonName"
-            android:padding="10sp"
-            android:textSize="30sp"
-            android:hint="user" />
+            android:hint="user"
+            style="@style/editText_style" />
 
         <EditText
             android:id="@+id/passWordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_alignLeft="@+id/passWordTextView"
-            android:layout_alignStart="@+id/passWordTextView"
-            android:layout_below="@+id/passWordTextView"
-            android:layout_weight="0.10"
-            android:clickable="true"
-            android:ems="10"
-            android:gravity="center"
             android:inputType="textPassword"
-            android:padding="10sp"
-            android:textSize="30sp"
-            android:hint="password" />
+            android:hint="password"
+            style="@style/editText_style"/>
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_alignLeft="@+id/passWordEditText"
-            android:layout_alignStart="@+id/passWordEditText"
-            android:layout_below="@+id/passWordEditText"
-            android:clickable="true"
-            android:gravity="center"
-            android:nestedScrollingEnabled="false"
             android:onClick="LoginIntoParse"
             android:text="login"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            style="@style/button_style" />
 
         <Button
             android:id="@+id/signUpButton"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_below="@+id/loginButton"
-            android:layout_toEndOf="@+id/passWordTextView"
-            android:layout_toRightOf="@+id/passWordTextView"
-            android:gravity="center"
+
             android:onClick="ShowSignUpActivity"
             android:text="Sign Up"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            style="@style/button_style"/>
 
     </LinearLayout>
 </RelativeLayout>

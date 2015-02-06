@@ -1,6 +1,39 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@style/CustomActionBarTheme"></style>
+    <style name="AppTheme" parent="@style/CustomActionBarTheme"/>
+
+    <!-- Login and Sing Up theme -->
+    <style name="loginSingUp_style" parent="appBackground_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center|center_vertical|center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <!-- Edit Text theme -->
+    <style name="editText_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_weight">0.10</item>
+        <item name="android:clickable">true</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <!-- Background color of the app -->
+    <style name="appBackground_style">
+        <item name="android:background">#ff5cffad</item>
+    </style>
+
+    <style name="button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/buttoncolor_btn_default_holo_light</item>
+    </style>
 
 </resources>
