@@ -2,9 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quizbackgroundblue"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-
+    style="@style/BackGround_apk"
     android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context=".MainActivity">
 
@@ -17,7 +16,6 @@
             android:id="@+id/btnOnePlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/quizbuttongreen"
             android:measureWithLargestChild="true"
             android:nestedScrollingEnabled="true"
             android:onClick="OnClick">
@@ -52,7 +50,6 @@
             android:id="@+id/btnMultiplayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/quizbuttongreen"
             android:onClick="OnClick">
 
             <ImageView
@@ -83,7 +80,6 @@
             android:id="@+id/btnTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/quizbuttongreen"
             android:onClick="OnClick">
 
             <ImageView

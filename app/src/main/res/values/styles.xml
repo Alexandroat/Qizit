@@ -1,6 +1,48 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
 
+
+
+    <style name="style_botones">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_alignLeft">@+id/passWordEditText</item>
+        <item name="android:layout_alignStart" tools:ignore="NewApi">@+id/passWordEditText</item>
+        <item name="android:layout_below">@+id/passWordEditText</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:nestedScrollingEnabled" tools:ignore="NewApi">false</item>
+        <item name="android:textAlignment" tools:ignore="NewApi">center</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:</item>
+         />
+    </style>
+
+    <style name="EditText_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_alignLeft">@+id/userNameTextView</item>
+        <item name="android:layout_alignStart" tools:ignore="NewApi">@+id/userNameTextView</item>
+        <item name="android:layout_below">@+id/userNameTextView</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_weight">0.10</item>
+        <item name="android:clickable">true</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="BackGround_apk">
+        <item name="android:background">#ff5cffad</item>
+
+
+    </style>
+
+
 </resources>
+

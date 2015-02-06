@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.alex.qizit.OptionsMenu"
-    android:background="#ff5cffad"
+    style="@style/BackGround_apk"
     android:id="@+id/prueba">
 
     <TextView
