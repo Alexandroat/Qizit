@@ -34,7 +34,17 @@
             <TextView
                 android:id="@+id/onePlayer"
                 android:text="@string/onePlayer"
-                style="@style/EditText_large" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/multiplayer"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/multiplayer"
+                android:layout_column="2"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="100dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="45sp" />
+                 />
         </TableRow>
 
         <TableRow

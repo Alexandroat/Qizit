@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="SignUpColorButton" parent="@style/_SignUpColorButton"/>
+
+  <style name="_SignUpColorButton" parent="Theme.AppCompat.Light">
+
+    <item name="android:buttonStyle">@style/ButtonSignUpColorButton</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonSignUpColorButton</item>
+
+  </style>
+
+</resources>

@@ -38,11 +38,13 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:windowSoftInputMode="adjustResize|stateVisible"></activity>
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:theme="@style/OrangeColorButton"></activity>
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_signup"
-            android:windowSoftInputMode="adjustResize|stateVisible"></activity>
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:theme="@style/_SignUpColorButton"></activity>
     </application>
 
 </manifest>
