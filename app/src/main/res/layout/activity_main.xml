@@ -1,128 +1,115 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:font="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/appBackground_style"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/appBackground_style"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    tools:context=".MainActivity">
-
-    <TableLayout
+    <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="274sp"
-        android:layout_gravity="center"
-        android:paddingTop="40dp">
+        android:layout_height="wrap_content">
+        <TextView
 
-        <TableRow
-            android:id="@+id/btnOnePlayer"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:measureWithLargestChild="true"
-            android:nestedScrollingEnabled="true"
-            android:onClick="OnClick"
-            android:paddingBottom="10sp">
-
-            <ImageView
-                android:id="@+id/icnPlay"
-                android:layout_width="match_parent"
-                android:layout_height="60sp"
-                android:layout_below="@+id/textView16"
-                android:layout_column="1"
-
-                android:src="@drawable/play" />
-
-            <TextView
-                android:id="@+id/onePlayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_column="2"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
-                android:text="@string/onePlayer"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="30sp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/btnMultiplayer"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:onClick="OnClick"
-            android:paddingBottom="10sp"
-            android:paddingTop="10sp">
-
-            <ImageView
-                android:id="@+id/icnMultiplayer"
-                android:layout_width="90sp"
-                android:layout_height="60sp"
-                android:layout_column="1"
-                android:src="@drawable/racingflags" />
-
-            <TextView
-                android:id="@+id/multiplayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/onePlayer"
-                android:layout_alignStart="@+id/onePlayer"
-                android:layout_centerVertical="true"
-                android:layout_column="2"
-                android:layout_gravity="center"
-                android:text="@string/multiplayer"
-                android:textSize="30sp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/btnTime"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-
-
-            android:onClick="OnClick"
-            android:paddingBottom="10sp"
-            android:paddingTop="10sp">
-
-            <ImageView
-                android:id="@+id/icnTime"
-                android:layout_width="90sp"
-                android:layout_height="60sp"
-                android:layout_alignLeft="@+id/icnMultiplayer"
-                android:layout_alignStart="@+id/icnMultiplayer"
-                android:layout_below="@+id/icnMultiplayer"
-                android:layout_column="1"
-                android:src="@drawable/hourglass" />
-
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/multiplayer"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/multiplayer"
-                android:layout_column="2"
-                android:layout_gravity="center"
-                android:text="@string/time"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="30sp" />
-        </TableRow>
-
-    </TableLayout>
-
-    <TextView
-
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal|top"
+            android:text="@string/welcome"
+            android:textColor="#ff060606"
+            android:textSize="25sp" />
+        </FrameLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center_horizontal|top"
-        android:text="@string/welcome"
-        android:textColor="#ff060606"
-        android:textSize="25sp" />
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:onClick="OnClick"
+        android:id="@+id/onePlayerBtn">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:src="@drawable/play" />
+
+        <TextView
+            android:id="@+id/opnePlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/onePlayer"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="27sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:onClick="OnClick"
+        android:id="@+id/multiBtn">
+
+        <ImageView
+            android:id="@+id/multiplayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:src="@drawable/racingflags" />
+
+        <TextView
+            android:id="@+id/multi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/multiplayer"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="27dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:onClick="OnClick"
+        android:id="@+id/timeBtn">
+
+        <ImageView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:src="@drawable/hourglass"
+            android:adjustViewBounds="false" />
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/time"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="27dp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

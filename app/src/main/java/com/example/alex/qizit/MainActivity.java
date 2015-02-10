@@ -1,6 +1,7 @@
 package com.example.alex.qizit;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -14,7 +15,6 @@ import com.parse.ParseUser;
 public class MainActivity extends ActionBarActivity {
 
     static final int RESULT_CODE_LOGIN = 0;
-    private TableRow button;
     // Cambio introducido
     private boolean isLogged = false;
 
@@ -22,7 +22,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        DbHelper helper = new DbHelper(this);
+        SQLiteDatabase db = helper.getWritableDatabase();
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
@@ -80,20 +81,5 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-   /* @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RESULT_CODE_LOGIN){
-            if(resultCode==RESULT_OK){
-
-                if (data.getData().toString().equals("true")) isLogged = true;
-                else isLogged = false;
-            }
-            else{
-
-            }
-        }
-
-    }*/
 }

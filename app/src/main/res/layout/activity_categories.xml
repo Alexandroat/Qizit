@@ -41,8 +41,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView3"
@@ -51,7 +50,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Videojuegos"
+            android:text="@string/category_videogames"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -61,7 +60,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Cine"
+            android:text="@string/category_cinema"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -71,7 +70,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Televisión"
+            android:text="@string/cetegory_tv"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>
@@ -119,7 +118,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Música"
+            android:text="@string/category_music"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -129,7 +128,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Tecnología"
+            android:text="@string/category_tecnology"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -139,7 +138,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Ciencia"
+            android:text="@string/category_science"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>
@@ -187,8 +186,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_colorwheel"
-            android:text="Mundo"
+            android:text="@string/category_world"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -198,8 +196,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_colorwheel"
-            android:text="Arte"
+            android:text="@string/category_art"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -209,8 +206,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_colorwheel"
-            android:text="Literatura"
+            android:text="@string/category_literature"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>

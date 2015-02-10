@@ -21,4 +21,13 @@
     <string name="title_activity_signup">Sign Up</string>
     <string name="vibrationOption">Vibración</string>
     <string name="soundOption">Sonido</string>
+    <string name="category_videogames">Videojuegos</string>
+    <string name="category_cinema">Cine</string>
+    <string name="cetegory_tv">Televisión</string>
+    <string name="category_music">Música</string>
+    <string name="category_tecnology">Tecnología</string>
+    <string name="category_science">Ciencia</string>
+    <string name="category_world">Mundo</string>
+    <string name="category_art">Arte</string>
+    <string name="category_literature">Literatura</string>
 </resources>
