@@ -1,13 +1,9 @@
 package com.example.alex.qizit;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
-import com.google.android.gms.analytics.an;
-import com.google.android.gms.internal.qu;
 
 /**
  * Created by alejandro on 08/02/15.
@@ -81,7 +77,7 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, question.getText());
+        questionValues.put(COLUMN_QUESTION_TEXT, question.getQuestionText());
         questionValues.put(COLUMN_QUESTION_FK_CATEGORY, question.getFkCategory());
         questionValues.put(COLUMN_QUESTION_DIFFICULTY, question.getDificulty());
 
@@ -96,7 +92,7 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, answer.getText());
+        questionValues.put(COLUMN_QUESTION_TEXT, answer.getAnswerText());
         questionValues.put(COLUMN_QUESTION_FK_CATEGORY, answer.getFkQuestion());
         questionValues.put(COLUMN_QUESTION_DIFFICULTY, answer.getIsTrue());
 
@@ -111,7 +107,7 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, category.getText());
+        questionValues.put(COLUMN_QUESTION_TEXT, category.getName());
 
         database.insert(TABLE_CATEGORIES, null, questionValues);
         database.setTransactionSuccessful();
@@ -186,8 +182,8 @@ public class DatabaseManager {
 
         Question question = new Question();
         question.setId(Integer.parseInt(cursor.getString(0)));
-        question.setText(cursor.getString(1));
-        question.setFk(cursor.getString(2));
+        question.setQuestionText(cursor.getString(1));
+        question.setFkCategory(Integer.parseInt(cursor.getString(2)));
         question.setDificulty(cursor.getString(3));
 
 
@@ -216,9 +212,9 @@ public class DatabaseManager {
 
         Answer answer = new Answer();
         answer.setId(Integer.parseInt(cursor.getString(0)));
-        answer.setText(cursor.getString(1));
-        answer.setFk(cursor.getString(2));
-        answer.setIstrue(cursor.getString(3));
+        answer.setAnswerText(cursor.getString(1));
+        answer.setFkQuestion(Integer.parseInt(cursor.getString(2)));
+        answer.setIsTrue(Boolean.parseBoolean(cursor.getString(3)));
 
 
         Log.d("getAnswer(" + id + ")", answer.toString());
@@ -226,7 +222,7 @@ public class DatabaseManager {
         return answer;
     }
 
-    public Categoy getCategory(int id){
+    public Category getCategory(int id){
 
         SQLiteDatabase db = openWriteable();
 
@@ -246,7 +242,7 @@ public class DatabaseManager {
 
         Category category = new Category();
         category.setId(Integer.parseInt(cursor.getString(0)));
-        category.setText(cursor.getString(1));
+        category.setName(cursor.getString(1));
 
         Log.d("getCategory(" + id + ")", category.toString());
 
