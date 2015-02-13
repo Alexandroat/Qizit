@@ -14,14 +14,13 @@ import com.parse.ParseUser;
 
 public class MainActivity extends ActionBarActivity {
 
-    static final int RESULT_CODE_LOGIN = 0;
-    // Cambio introducido
-    private boolean isLogged = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
+         * Creation of the Database
+         */
         DbHelper helper = new DbHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
 

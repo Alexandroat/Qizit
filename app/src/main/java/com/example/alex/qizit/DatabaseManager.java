@@ -2,7 +2,12 @@ package com.example.alex.qizit;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import com.google.android.gms.analytics.an;
+import com.google.android.gms.internal.qu;
 
 /**
  * Created by alejandro on 08/02/15.
@@ -31,25 +36,28 @@ public class DatabaseManager {
     static final String COLUMN_CATEGORY_ID = "_id";
     static final String COLUMN_CATEGORY_TEXT = "CATEGORY_TEXT";
 
+    /*
+      *Create Tables
+      */
     static final String CREATE_TABLE_QUESTION = "CREATE TABLE " + TABLE_QUESTION +
-                                                "(" + COLUMN_QUESTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                                                    + COLUMN_QUESTION_TEXT + " TEXT NOT NULL, "
-                                                    + COLUMN_QUESTION_FK_CATEGORY + " INTEGER NOT NULL, "
-                                                    + COLUMN_QUESTION_DIFFICULTY + " TEXT NOT NULL, FOREIGN KEY ( "
-                                                    + COLUMN_QUESTION_FK_CATEGORY + " ) REFERENCES "
-                                                    + TABLE_CATEGORIES + " ( " + COLUMN_CATEGORY_ID + " ) );";
+            "(" + COLUMN_QUESTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_QUESTION_TEXT + " TEXT NOT NULL, "
+            + COLUMN_QUESTION_FK_CATEGORY + " INTEGER NOT NULL, "
+            + COLUMN_QUESTION_DIFFICULTY + " TEXT NOT NULL, FOREIGN KEY ( "
+            + COLUMN_QUESTION_FK_CATEGORY + " ) REFERENCES "
+            + TABLE_CATEGORIES + " ( " + COLUMN_CATEGORY_ID + " ) );";
 
     static final String CREATE_TABLE_ANSWER = "CREATE TABLE " + TABLE_ANSWER +
-                                                "(" + COLUMN_ANSWER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                                                    + COLUMN_ANSWER_TEXT + " TEXT NOT NULL, "
-                                                    + COLUMN_ANSWER_FK_QUESTION + " INTEGER NOT NULL, "
-                                                    + COLUMN_ANSWER_ISTRUE + " INTEGER NOT NULL, FOREIGN KEY ( "
-                                                    + COLUMN_ANSWER_FK_QUESTION + ") REFERENCES "
-                                                    + TABLE_QUESTION + " ( " + COLUMN_QUESTION_ID + " ) );";
+            "(" + COLUMN_ANSWER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_ANSWER_TEXT + " TEXT NOT NULL, "
+            + COLUMN_ANSWER_FK_QUESTION + " INTEGER NOT NULL, "
+            + COLUMN_ANSWER_ISTRUE + " INTEGER NOT NULL, FOREIGN KEY ( "
+            + COLUMN_ANSWER_FK_QUESTION + ") REFERENCES "
+            + TABLE_QUESTION + " ( " + COLUMN_QUESTION_ID + " ) );";
 
     static final String CREATE_TABLE_CATEGORY = "CREATE TABLE " + TABLE_CATEGORIES +
-                                                "(" + COLUMN_CATEGORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                                                    + COLUMN_CATEGORY_TEXT + " TEXT NOT NULL );";
+            "(" + COLUMN_CATEGORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_CATEGORY_TEXT + " TEXT NOT NULL );";
 
     /*public DatabaseManager(Context context) {
 
@@ -60,4 +68,188 @@ public class DatabaseManager {
     public ContentValues generateContentValues() {
 
     }*/
+
+    public SQLiteDatabase openWriteable() {
+        return helper.getWritableDatabase();
+    }
+
+    public void close(SQLiteDatabase database) {
+        database.close();
+    }
+
+    public void createQuestion(Question question) {
+        SQLiteDatabase database = openWriteable();
+        database.beginTransaction();
+        ContentValues questionValues = new ContentValues();
+        questionValues.put(COLUMN_QUESTION_TEXT, question.getText());
+        questionValues.put(COLUMN_QUESTION_FK_CATEGORY, question.getFkCategory());
+        questionValues.put(COLUMN_QUESTION_DIFFICULTY, question.getDificulty());
+
+        database.insert(TABLE_QUESTION, null, questionValues);
+        database.setTransactionSuccessful();
+        database.endTransaction();
+        close(database);
+
+    }
+
+    public void createAnswer(Answer answer) {
+        SQLiteDatabase database = openWriteable();
+        database.beginTransaction();
+        ContentValues questionValues = new ContentValues();
+        questionValues.put(COLUMN_QUESTION_TEXT, answer.getText());
+        questionValues.put(COLUMN_QUESTION_FK_CATEGORY, answer.getFkQuestion());
+        questionValues.put(COLUMN_QUESTION_DIFFICULTY, answer.getIsTrue());
+
+        database.insert(TABLE_ANSWER, null, questionValues);
+        database.setTransactionSuccessful();
+        database.endTransaction();
+        close(database);
+
+    }
+
+    public void createCategory(Category category) {
+        SQLiteDatabase database = openWriteable();
+        database.beginTransaction();
+        ContentValues questionValues = new ContentValues();
+        questionValues.put(COLUMN_QUESTION_TEXT, category.getText());
+
+        database.insert(TABLE_CATEGORIES, null, questionValues);
+        database.setTransactionSuccessful();
+        database.endTransaction();
+        close(database);
+
+    }
+
+    public void deleteQuestion(int questionId) {
+        SQLiteDatabase database = openWriteable();
+        database.beginTransaction();
+        database.delete(TABLE_ANSWER,
+                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, questionId),
+                null);
+        database.delete(TABLE_QUESTION,
+                String.format("%s=%d", COLUMN_QUESTION_ID, questionId),
+                null);
+
+        database.setTransactionSuccessful();
+        database.endTransaction();
+        close(database);
+    }
+
+    public void deleteAnswer(int answerId) {
+        SQLiteDatabase database = openWriteable();
+        database.beginTransaction();
+        /*database.delete(TABLE_QUESTION,
+                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, answerId),
+                null);*/
+        database.delete(TABLE_ANSWER,
+                String.format("%s=%d", COLUMN_ANSWER_ID, answerId),
+                null);
+        database.setTransactionSuccessful();
+        database.endTransaction();
+        close(database);
+    }
+
+    public void deleteCategory(int categoryId) {
+        SQLiteDatabase database = openWriteable();
+        database.beginTransaction();
+        database.delete(TABLE_QUESTION,
+                String.format("%s=%d", COLUMN_QUESTION_FK_CATEGORY, categoryId),
+                null);
+        /*database.delete(TABLE_ANSWER,
+                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, ),
+                null); Eliminar respuestas de una pregunta*/
+        database.delete(TABLE_CATEGORIES,
+                String.format("%s=%d", COLUMN_CATEGORY_ID, categoryId),
+                null);
+        database.setTransactionSuccessful();
+        database.endTransaction();
+        close(database);
+    }
+
+    public Question getQuestion(int id){
+
+        SQLiteDatabase db = openWriteable();
+
+        Cursor cursor =
+                db.query(TABLE_QUESTION,
+                        new String[] {COLUMN_QUESTION_ID, COLUMN_QUESTION_TEXT, COLUMN_QUESTION_FK_CATEGORY, COLUMN_QUESTION_DIFFICULTY},
+                        " id = ?",
+                        new String[] { String.valueOf(id) },
+                        null,
+                        null,
+                        null,
+                        null);
+
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Question question = new Question();
+        question.setId(Integer.parseInt(cursor.getString(0)));
+        question.setText(cursor.getString(1));
+        question.setFk(cursor.getString(2));
+        question.setDificulty(cursor.getString(3));
+
+
+        Log.d("getQuestion(" + id + ")", question.toString());
+
+        return question;
+    }
+
+    public Answer getAnswer(int id){
+
+        SQLiteDatabase db = openWriteable();
+
+        Cursor cursor =
+                db.query(TABLE_ANSWER,
+                        new String[] {COLUMN_ANSWER_ID, COLUMN_ANSWER_TEXT, COLUMN_ANSWER_FK_QUESTION, COLUMN_ANSWER_ISTRUE},
+                        " id = ?",
+                        new String[] { String.valueOf(id) },
+                        null,
+                        null,
+                        null,
+                        null);
+
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Answer answer = new Answer();
+        answer.setId(Integer.parseInt(cursor.getString(0)));
+        answer.setText(cursor.getString(1));
+        answer.setFk(cursor.getString(2));
+        answer.setIstrue(cursor.getString(3));
+
+
+        Log.d("getAnswer(" + id + ")", answer.toString());
+
+        return answer;
+    }
+
+    public Categoy getCategory(int id){
+
+        SQLiteDatabase db = openWriteable();
+
+        Cursor cursor =
+                db.query(TABLE_QUESTION,
+                        new String[] {COLUMN_QUESTION_ID, COLUMN_QUESTION_TEXT},
+                        " id = ?",
+                        new String[] { String.valueOf(id) },
+                        null,
+                        null,
+                        null,
+                        null);
+
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Category category = new Category();
+        category.setId(Integer.parseInt(cursor.getString(0)));
+        category.setText(cursor.getString(1));
+
+        Log.d("getCategory(" + id + ")", category.toString());
+
+        return category;
+    }
 }

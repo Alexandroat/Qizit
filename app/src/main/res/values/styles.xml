@@ -24,7 +24,7 @@
 
     <!-- Background color of the app -->
     <style name="appBackground_style">
-        <item name="android:background">#ff5cffad</item>
+        <item name="android:background">#ff5cffad <!--@drawable/fondo--></item>
     </style>
 
     <style name="button_style">
