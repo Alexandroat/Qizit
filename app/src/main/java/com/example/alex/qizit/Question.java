@@ -1,7 +1,7 @@
 package com.example.alex.qizit;
 
 public class Question {
-
+//
     int id;
     String categoryText;
     String questionText;

@@ -1,5 +1,5 @@
 package com.example.alex.qizit;
-
+//
 
 public class Answer {
     int id;
