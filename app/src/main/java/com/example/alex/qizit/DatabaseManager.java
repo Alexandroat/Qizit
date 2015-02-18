@@ -1,6 +1,7 @@
 package com.example.alex.qizit;
 //
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -55,13 +56,13 @@ public class DatabaseManager {
             "(" + COLUMN_CATEGORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_CATEGORY_TEXT + " TEXT NOT NULL );";
 
-    /*public DatabaseManager(Context context) {
+    public DatabaseManager(Context context) {
 
         helper = new DbHelper(context);
         db = helper.getWritableDatabase();
     }
 
-    public ContentValues generateContentValues() {
+   /* public ContentValues generateContentValues() {
 
     }*/
 

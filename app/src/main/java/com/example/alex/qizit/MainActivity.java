@@ -23,6 +23,10 @@ public class MainActivity extends ActionBarActivity {
          */
         DbHelper helper = new DbHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
+        DatabaseManager dbm = new DatabaseManager(this);
+        dbm.createCategory(new Category("Tele"));
+        //dbm.createQuestion(new Question());
+        //dbm.createAnswer(new Answer());
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
