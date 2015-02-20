@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title = "@string/soundOption">
+        <Switch1Preference
+            android:defaultValue="off"
+            android:key="soundOption"
+            android:summary="On o Off"
+            android:title="soundOption"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title = "@string/vibrationOption">
+        <Switch2Preference
+            android:defaultValue="false"
+            android:key="vibrationOption"
+            android:summary="On o Off"
+            android:title="vibrationOption"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title = "@string/restartScores">
+        <RestablecerPreference
+            android:key="restartScores"
+            android:summary="On o Off"
+            android:title="restartScores"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
