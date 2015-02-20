@@ -62,15 +62,11 @@ public class DatabaseManager {
         db = helper.getWritableDatabase();
     }
 
-   /* public ContentValues generateContentValues() {
-
-    }*/
-
     public SQLiteDatabase openWriteable() {
         return helper.getWritableDatabase();
     }
 
-    public void close(SQLiteDatabase database) {
+    public void closeDb(SQLiteDatabase database) {
         database.close();
     }
 
@@ -85,7 +81,7 @@ public class DatabaseManager {
         database.insert(TABLE_QUESTION, null, questionValues);
         database.setTransactionSuccessful();
         database.endTransaction();
-        close(database);
+        closeDb(database);
 
     }
 
@@ -100,7 +96,7 @@ public class DatabaseManager {
         database.insert(TABLE_ANSWER, null, questionValues);
         database.setTransactionSuccessful();
         database.endTransaction();
-        close(database);
+        closeDb(database);
 
     }
 
@@ -113,7 +109,7 @@ public class DatabaseManager {
         database.insert(TABLE_CATEGORIES, null, questionValues);
         database.setTransactionSuccessful();
         database.endTransaction();
-        close(database);
+        closeDb(database);
 
     }
 
@@ -129,21 +125,21 @@ public class DatabaseManager {
 
         database.setTransactionSuccessful();
         database.endTransaction();
-        close(database);
+        closeDb(database);
     }
 
     public void deleteAnswer(int answerId) {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
-        /*database.delete(TABLE_QUESTION,
+        database.delete(TABLE_QUESTION,
                 String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, answerId),
-                null);*/
+                null);
         database.delete(TABLE_ANSWER,
                 String.format("%s=%d", COLUMN_ANSWER_ID, answerId),
                 null);
         database.setTransactionSuccessful();
         database.endTransaction();
-        close(database);
+        closeDb(database);
     }
 
     public void deleteCategory(int categoryId) {
@@ -152,15 +148,15 @@ public class DatabaseManager {
         database.delete(TABLE_QUESTION,
                 String.format("%s=%d", COLUMN_QUESTION_FK_CATEGORY, categoryId),
                 null);
-        /*database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, ),
-                null); Eliminar respuestas de una pregunta*/
+        database.delete(TABLE_ANSWER,
+                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, categoryId),
+                null);
         database.delete(TABLE_CATEGORIES,
                 String.format("%s=%d", COLUMN_CATEGORY_ID, categoryId),
                 null);
         database.setTransactionSuccessful();
         database.endTransaction();
-        close(database);
+        closeDb(database);
     }
 
     public Question getQuestion(int id){

@@ -1,12 +1,15 @@
 package com.example.alex.qizit;
 
-public class Question {
-//
+import java.io.Serializable;
+
+public class Question implements Serializable {
+    private static final long serialVersionUID = 1L;
     int id;
     String categoryText;
     String questionText;
     int fkCategory;
     String dificulty;
+
     public Question(int id, String categoryText, String questionText,
                     int fkCategory, String dificulty) {
         this.id = id;
@@ -29,38 +32,49 @@ public class Question {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getCategoryText() {
         return categoryText;
     }
+
     public void setCategoryText(String categoryText) {
         this.categoryText = categoryText;
     }
+
     public String getQuestionText() {
         return questionText;
     }
+
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
+
     public int getFkCategory() {
         return fkCategory;
     }
+
     public void setFkCategory(int fkCategory) {
         this.fkCategory = fkCategory;
     }
+
     public String getDificulty() {
         return dificulty;
     }
+
     public void setDificulty(String dificulty) {
         this.dificulty = dificulty;
     }
+
     public String toString() {
         return "Question [id=" + id + ", categoryText=" + categoryText
                 + ", questionText=" + questionText + ", fkCategory="
                 + fkCategory + ", dificulty=" + dificulty + "]";
     }
+
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -74,6 +88,7 @@ public class Question {
                 + ((questionText == null) ? 0 : questionText.hashCode());
         return result;
     }
+
     public boolean equals(Object obj) {
         if (this == obj)
             return true;

@@ -22,9 +22,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String fontPath2 ="fonts/LeckerliOne-Regular.ttf";
-        TextView tv = (TextView) findViewById(R.id.welcome);
+       /* TextView tv = (TextView) findViewById(R.id.welcome);
         Typeface tf= Typeface.createFromAsset(getAssets(), fontPath2);
-        tv.setTypeface(tf);
+        tv.setTypeface(tf);*/
         /*
          * Creation of the Database
          */
@@ -77,6 +77,7 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            OptionsMenu op = new OptionsMenu(this,getPreferences(id));
             Intent settings = new Intent().setClass(MainActivity.this, OptionsMenu.class);
             startActivity(settings);
             return true;

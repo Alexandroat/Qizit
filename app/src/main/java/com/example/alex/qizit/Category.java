@@ -1,14 +1,17 @@
 package com.example.alex.qizit;
 
-public class Category {
-//
+import java.io.Serializable;
+
+public class Category implements Serializable {
+    private static final long serialVersionUID = 1L;
     int id;
     String name;
 
     public Category(/*int id,*/ String name) {
-        this.id = id;
+        //  this.id = id;
         this.name = name;
     }
+
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -16,6 +19,7 @@ public class Category {
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         return result;
     }
+
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
@@ -33,21 +37,27 @@ public class Category {
             return false;
         return true;
     }
+
     public String toString() {
         return "Category [id=" + id + ", name=" + name + "]";
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public Category() {
 
         this.id = 0;

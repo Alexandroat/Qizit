@@ -1,7 +1,10 @@
 package com.example.alex.qizit;
 //
 
-public class Answer {
+import java.io.Serializable;
+
+public class Answer implements Serializable {
+    private static final long serialVersionUID = 1L;
     int id;
     String answerText;
     int fkQuestion;

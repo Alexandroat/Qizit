@@ -1,0 +1,10 @@
+/Users/alex/Documents/Qizit/app/build/intermediates/classes/debug
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-32af0637346cb6207d9d98cbb678e548d2aa8d03.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-34e1e902294303e6df9a1f61a9cd65aee83e18fd.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.1-f1e5c5abb40916511baf542e0d0853fdbac5ea90.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-a71729803ed752de1a5ae0ead613d280116b0687.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-javadoc-8f50efa5e8554699b247b32d03e15914fc743afd.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/classes-c3499c0ea74350af200578870756481e85aa1745.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/Parse-1.8.1-b339b850e2b2e1a5825400c9727b160beff1ad53.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/classes-dbb25bbd1cad4470b64d49b8c55e2652d1a9ccdc.jar
+/Users/alex/Documents/Qizit/app/build/intermediates/pre-dexed/debug/classes-4c4687cce24d773302ba13b97745c949dd4ed37a.jar
