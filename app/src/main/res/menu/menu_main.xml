@@ -23,4 +23,19 @@
         android:id="@+id/logout"
         android:title="@string/menu_logout_text"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/sharebutt"
+        android:title="Share button"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="1" />
+
+        <!--
+        cambiar la api para que funcione poner imagen en action bar
+        android:showAsAction="ifRoom"
+        -->
+
+    />
+
+
+
 </menu>
