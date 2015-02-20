@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/CustomActionBarTheme"/>
@@ -20,6 +20,7 @@
         <item name="android:ems">10</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/relleno_text</item>
     </style>
 
     <!-- Background color of the app -->
@@ -31,9 +32,9 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
-        <item name="android:textAlignment">center</item>
+        <item name="android:textAlignment" tools:ignore="NewApi">center</item>
         <item name="android:textSize">30sp</item>
-        <item name="android:background">@drawable/buttoncolor_btn_default_holo_light</item>
+        <item name="android:background">@drawable/redondear_buttons</item>
     </style>
 
 </resources>

@@ -13,7 +13,6 @@
     <string name="time">Tiempo</string>
     <string name="welcome">Bienvenido a Qizit</string>
     <string name="title_activity_progress">Progress</string>
-
     <string name="restartScores">Restablecer Puntuaciones</string>
     <string name="restartScoresInf">Eliminará todas las puntuaciones guardadas</string>
     <string name="btnDelete">Eliminar</string>
@@ -30,4 +29,7 @@
     <string name="category_world">Mundo</string>
     <string name="category_art">Arte</string>
     <string name="category_literature">Literatura</string>
+    <string name="title_activity_puntuations">Puntuations</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

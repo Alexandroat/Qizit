@@ -24,18 +24,20 @@
             android:id="@+id/passWordEditText"
             android:inputType="textPassword"
             android:hint="password"
-            style="@style/editText_style"/>
+            style="@style/editText_style"
+            android:layout_marginTop="5dp" />
 
         <EditText
             android:id="@+id/emailEditText"
             android:inputType="textEmailAddress"
             android:hint="E-mail"
-            style="@style/editText_style"/>
+            style="@style/editText_style"
+            android:layout_marginTop="5dp" />
 
         <Button
             android:id="@+id/signUpButton"
             android:layout_marginBottom="10sp"
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="12sp"
             android:onClick="SignUpButton"
             android:text="Sign Up"
             style="@style/button_style"/>
@@ -45,7 +47,8 @@
             android:layout_marginBottom="10sp"
             android:onClick="showLoginActivity"
             android:text="Login"
-            style="@style/button_style"/>
+            style="@style/button_style"
+            android:layout_marginTop="4dp" />
 
     </LinearLayout>
 

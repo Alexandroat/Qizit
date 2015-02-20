@@ -22,20 +22,23 @@
             android:id="@+id/passWordEditText"
             android:inputType="textPassword"
             android:hint="password"
-            style="@style/editText_style"/>
+            style="@style/editText_style"
+            android:layout_marginTop="5dp" />
 
         <Button
             android:id="@+id/loginButton"
             android:onClick="LoginIntoParse"
             android:text="login"
-            style="@style/button_style" />
+            style="@style/button_style"
+            android:layout_marginTop="10dp" />
 
         <Button
             android:id="@+id/signUpButton"
 
             android:onClick="ShowSignUpActivity"
             android:text="Sign Up"
-            style="@style/button_style"/>
+            style="@style/button_style"
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 </RelativeLayout>

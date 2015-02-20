@@ -1715,9 +1715,11 @@ containing a value of this type.
         public static final int quizbuttongreen=0x7f020069;
         public static final int quizbuttonorange=0x7f02006a;
         public static final int racingflags=0x7f02006b;
-        public static final int splash_qizit=0x7f02006c;
-        public static final int tools=0x7f02006d;
-        public static final int tv=0x7f02006e;
+        public static final int redondear_buttons=0x7f02006c;
+        public static final int relleno_text=0x7f02006d;
+        public static final int splash_qizit=0x7f02006e;
+        public static final int tools=0x7f02006f;
+        public static final int tv=0x7f020070;
     }
     public static final class id {
         public static final int About_us=0x7f090089;
@@ -1891,15 +1893,17 @@ containing a value of this type.
         public static final int activity_categories=0x7f030017;
         public static final int activity_login=0x7f030018;
         public static final int activity_main=0x7f030019;
-        public static final int activity_settings=0x7f03001a;
-        public static final int activity_signup=0x7f03001b;
-        public static final int activity_splash=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int activity_puntuations=0x7f03001a;
+        public static final int activity_settings=0x7f03001b;
+        public static final int activity_signup=0x7f03001c;
+        public static final int activity_splash=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int menu_ajustes=0x7f0d0000;
         public static final int menu_categories=0x7f0d0001;
         public static final int menu_main=0x7f0d0002;
+        public static final int menu_puntuations=0x7f0d0003;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f050000;
@@ -1974,25 +1978,27 @@ containing a value of this type.
         public static final int error_incorrect_password=0x7f0b0042;
         public static final int error_invalid_email=0x7f0b0043;
         public static final int error_invalid_password=0x7f0b0044;
-        public static final int menu_logout_text=0x7f0b0045;
-        public static final int multiplayer=0x7f0b0046;
-        public static final int onePlayer=0x7f0b0047;
-        public static final int prompt_email=0x7f0b0048;
-        public static final int prompt_password=0x7f0b0049;
-        public static final int restartScores=0x7f0b004a;
-        public static final int restartScoresInf=0x7f0b004b;
-        public static final int soundOption=0x7f0b004c;
-        public static final int store_picture_message=0x7f0b004d;
-        public static final int store_picture_title=0x7f0b004e;
-        public static final int time=0x7f0b004f;
-        public static final int title_activity_home=0x7f0b0050;
-        public static final int title_activity_login=0x7f0b0051;
-        public static final int title_activity_progress=0x7f0b0052;
-        public static final int title_activity_settings=0x7f0b0053;
-        public static final int title_activity_signup=0x7f0b0054;
-        public static final int vibrationOption=0x7f0b0055;
-        public static final int wallet_buy_button_place_holder=0x7f0b0056;
-        public static final int welcome=0x7f0b0057;
+        public static final int hello_world=0x7f0b0045;
+        public static final int menu_logout_text=0x7f0b0046;
+        public static final int multiplayer=0x7f0b0047;
+        public static final int onePlayer=0x7f0b0048;
+        public static final int prompt_email=0x7f0b0049;
+        public static final int prompt_password=0x7f0b004a;
+        public static final int restartScores=0x7f0b004b;
+        public static final int restartScoresInf=0x7f0b004c;
+        public static final int soundOption=0x7f0b004d;
+        public static final int store_picture_message=0x7f0b004e;
+        public static final int store_picture_title=0x7f0b004f;
+        public static final int time=0x7f0b0050;
+        public static final int title_activity_home=0x7f0b0051;
+        public static final int title_activity_login=0x7f0b0052;
+        public static final int title_activity_progress=0x7f0b0053;
+        public static final int title_activity_puntuations=0x7f0b0054;
+        public static final int title_activity_settings=0x7f0b0055;
+        public static final int title_activity_signup=0x7f0b0056;
+        public static final int vibrationOption=0x7f0b0057;
+        public static final int wallet_buy_button_place_holder=0x7f0b0058;
+        public static final int welcome=0x7f0b0059;
     }
     public static final class style {
         public static final int AppTheme=0x7f0c0000;

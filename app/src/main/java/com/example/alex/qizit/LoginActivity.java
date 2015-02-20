@@ -2,9 +2,11 @@ package com.example.alex.qizit;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -23,6 +25,19 @@ public class LoginActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // TODO Externalizar en una clase
+        String fontPath="fonts/LeckerliOne-Regular.ttf";
+        String fontPath1="fonts/days.ttf";
+        EditText et= (EditText) findViewById(R.id.userNameEditText);
+        EditText et1 = (EditText) findViewById(R.id.passWordEditText);
+        TextView txt = (TextView) findViewById(R.id.loginButton);
+        TextView txt1 = (TextView) findViewById(R.id.signUpButton);
+        Typeface tf= Typeface.createFromAsset(getAssets(), fontPath);
+        Typeface tf1= Typeface.createFromAsset(getAssets(), fontPath1);
+        txt.setTypeface(tf);
+        txt1.setTypeface(tf);
+        et.setTypeface(tf1);
+        et1.setTypeface(tf1);
 
     }
 
