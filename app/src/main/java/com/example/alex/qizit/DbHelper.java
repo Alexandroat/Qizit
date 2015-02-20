@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
-* Created by VLad on 03/02/2015.
+* Created by VLad on 03/02/2015
 */
 public class DbHelper extends SQLiteOpenHelper {
     final static String DB_NAME = "Qizit.db";
