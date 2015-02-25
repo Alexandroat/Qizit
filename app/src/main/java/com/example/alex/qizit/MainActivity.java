@@ -22,18 +22,17 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String fontPath2 ="fonts/LeckerliOne-Regular.ttf";
-       /* TextView tv = (TextView) findViewById(R.id.welcome);
-        Typeface tf= Typeface.createFromAsset(getAssets(), fontPath2);
-        tv.setTypeface(tf);*/
+
         /*
          * Creation of the Database
          */
         DbHelper helper = new DbHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
         DatabaseManager dbm = new DatabaseManager(this);
-        dbm.createCategory(new Category("Tele"));
-        //dbm.createQuestion(new Question());
-        //dbm.createAnswer(new Answer());
+        //dbm.createCategory(new Category("Ejemplos"));
+        //dbm.createQuestion(new Question("¡Primera pregunta de la app!",1,"Sin Dificultad"));
+        //dbm.createAnswer(new Answer("No hay respuesta para una buena pregunta",1,true));
+       // dbm.getQuestion(1);
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {

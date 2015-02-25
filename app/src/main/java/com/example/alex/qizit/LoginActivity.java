@@ -25,7 +25,7 @@ public class LoginActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // TODO Externalizar en una clase
+        // TODO Externalizar en una clase las fuentes
         String fontPath="fonts/LeckerliOne-Regular.ttf";
         String fontPath1="fonts/days.ttf";
         EditText et= (EditText) findViewById(R.id.userNameEditText);

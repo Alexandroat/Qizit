@@ -10,10 +10,10 @@ public class Question implements Serializable {
     int fkCategory;
     String dificulty;
 
-    public Question(int id, String categoryText, String questionText,
+    public Question(/*int id, String categoryText,*/ String questionText,
                     int fkCategory, String dificulty) {
-        this.id = id;
-        this.categoryText = categoryText;
+        //this.id = id;
+       // this.categoryText = categoryText;
         this.questionText = questionText;
         this.fkCategory = fkCategory;
         this.dificulty = dificulty;

@@ -10,7 +10,7 @@ public class Answer implements Serializable {
     int fkQuestion;
     boolean isTrue;
 
-    public Answer(int id, String answerText, int fkQuestion, boolean isTrue) {
+    public Answer(/*int id,*/ String answerText, int fkQuestion, boolean isTrue) {
         this.id = id;
         this.answerText = answerText;
         this.fkQuestion = fkQuestion;

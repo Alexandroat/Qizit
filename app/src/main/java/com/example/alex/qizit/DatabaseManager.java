@@ -89,9 +89,9 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, answer.getAnswerText());
-        questionValues.put(COLUMN_QUESTION_FK_CATEGORY, answer.getFkQuestion());
-        questionValues.put(COLUMN_QUESTION_DIFFICULTY, answer.getIsTrue());
+        questionValues.put(COLUMN_ANSWER_TEXT, answer.getAnswerText());
+        questionValues.put(COLUMN_ANSWER_FK_QUESTION, answer.getFkQuestion());
+        questionValues.put(COLUMN_ANSWER_ISTRUE, answer.getIsTrue());
 
         database.insert(TABLE_ANSWER, null, questionValues);
         database.setTransactionSuccessful();
@@ -104,7 +104,7 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, category.getName());
+        questionValues.put(COLUMN_CATEGORY_TEXT, category.getName());
 
         database.insert(TABLE_CATEGORIES, null, questionValues);
         database.setTransactionSuccessful();
@@ -113,52 +113,52 @@ public class DatabaseManager {
 
     }
 
-    public void deleteQuestion(int questionId) {
-        SQLiteDatabase database = openWriteable();
-        database.beginTransaction();
-        database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, questionId),
-                null);
-        database.delete(TABLE_QUESTION,
-                String.format("%s=%d", COLUMN_QUESTION_ID, questionId),
-                null);
-
-        database.setTransactionSuccessful();
-        database.endTransaction();
-        closeDb(database);
-    }
-
-    public void deleteAnswer(int answerId) {
-        SQLiteDatabase database = openWriteable();
-        database.beginTransaction();
-        database.delete(TABLE_QUESTION,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, answerId),
-                null);
-        database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_ID, answerId),
-                null);
-        database.setTransactionSuccessful();
-        database.endTransaction();
-        closeDb(database);
-    }
-
-    public void deleteCategory(int categoryId) {
-        SQLiteDatabase database = openWriteable();
-        database.beginTransaction();
-        database.delete(TABLE_QUESTION,
-                String.format("%s=%d", COLUMN_QUESTION_FK_CATEGORY, categoryId),
-                null);
-        database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, categoryId),
-                null);
-        database.delete(TABLE_CATEGORIES,
-                String.format("%s=%d", COLUMN_CATEGORY_ID, categoryId),
-                null);
-        database.setTransactionSuccessful();
-        database.endTransaction();
-        closeDb(database);
-    }
-
+//    public void deleteQuestion(int questionId) {
+//        SQLiteDatabase database = openWriteable();
+//        database.beginTransaction();
+//        database.delete(TABLE_ANSWER,
+//                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, questionId),
+//                null);
+//        database.delete(TABLE_QUESTION,
+//                String.format("%s=%d", COLUMN_QUESTION_ID, questionId),
+//                null);
+//
+//        database.setTransactionSuccessful();
+//        database.endTransaction();
+//        closeDb(database);
+//    }
+//
+//    public void deleteAnswer(int answerId) {
+//        SQLiteDatabase database = openWriteable();
+//        database.beginTransaction();
+//        database.delete(TABLE_QUESTION,
+//                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, answerId),
+//                null);
+//        database.delete(TABLE_ANSWER,
+//                String.format("%s=%d", COLUMN_ANSWER_ID, answerId),
+//                null);
+//        database.setTransactionSuccessful();
+//        database.endTransaction();
+//        closeDb(database);
+//    }
+//
+//    public void deleteCategory(int categoryId) {
+//        SQLiteDatabase database = openWriteable();
+//        database.beginTransaction();
+//        database.delete(TABLE_QUESTION,
+//                String.format("%s=%d", COLUMN_QUESTION_FK_CATEGORY, categoryId),
+//                null);
+//        database.delete(TABLE_ANSWER,
+//                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, categoryId),
+//                null);
+//        database.delete(TABLE_CATEGORIES,
+//                String.format("%s=%d", COLUMN_CATEGORY_ID, categoryId),
+//                null);
+//        database.setTransactionSuccessful();
+//        database.endTransaction();
+//        closeDb(database);
+//    }
+//
     public Question getQuestion(int id){
 
         SQLiteDatabase db = openWriteable();
@@ -188,61 +188,61 @@ public class DatabaseManager {
 
         return question;
     }
-
-    public Answer getAnswer(int id){
-
-        SQLiteDatabase db = openWriteable();
-
-        Cursor cursor =
-                db.query(TABLE_ANSWER,
-                        new String[] {COLUMN_ANSWER_ID, COLUMN_ANSWER_TEXT, COLUMN_ANSWER_FK_QUESTION, COLUMN_ANSWER_ISTRUE},
-                        " id = ?",
-                        new String[] { String.valueOf(id) },
-                        null,
-                        null,
-                        null,
-                        null);
-
-
-        if (cursor != null)
-            cursor.moveToFirst();
-
-        Answer answer = new Answer();
-        answer.setId(Integer.parseInt(cursor.getString(0)));
-        answer.setAnswerText(cursor.getString(1));
-        answer.setFkQuestion(Integer.parseInt(cursor.getString(2)));
-        answer.setIsTrue(Boolean.parseBoolean(cursor.getString(3)));
-
-
-        Log.d("getAnswer(" + id + ")", answer.toString());
-
-        return answer;
-    }
-
-    public Category getCategory(int id){
-
-        SQLiteDatabase db = openWriteable();
-
-        Cursor cursor =
-                db.query(TABLE_QUESTION,
-                        new String[] {COLUMN_QUESTION_ID, COLUMN_QUESTION_TEXT},
-                        " id = ?",
-                        new String[] { String.valueOf(id) },
-                        null,
-                        null,
-                        null,
-                        null);
-
-
-        if (cursor != null)
-            cursor.moveToFirst();
-
-        Category category = new Category();
-        category.setId(Integer.parseInt(cursor.getString(0)));
-        category.setName(cursor.getString(1));
-
-        Log.d("getCategory(" + id + ")", category.toString());
-
-        return category;
-    }
+//
+//    public Answer getAnswer(int id){
+//
+//        SQLiteDatabase db = openWriteable();
+//
+//        Cursor cursor =
+//                db.query(TABLE_ANSWER,
+//                        new String[] {COLUMN_ANSWER_ID, COLUMN_ANSWER_TEXT, COLUMN_ANSWER_FK_QUESTION, COLUMN_ANSWER_ISTRUE},
+//                        " id = ?",
+//                        new String[] { String.valueOf(id) },
+//                        null,
+//                        null,
+//                        null,
+//                        null);
+//
+//
+//        if (cursor != null)
+//            cursor.moveToFirst();
+//
+//        Answer answer = new Answer();
+//        answer.setId(Integer.parseInt(cursor.getString(0)));
+//        answer.setAnswerText(cursor.getString(1));
+//        answer.setFkQuestion(Integer.parseInt(cursor.getString(2)));
+//        answer.setIsTrue(Boolean.parseBoolean(cursor.getString(3)));
+//
+//
+//        Log.d("getAnswer(" + id + ")", answer.toString());
+//
+//        return answer;
+//    }
+//
+//    public Category getCategory(int id){
+//
+//        SQLiteDatabase db = openWriteable();
+//
+//        Cursor cursor =
+//                db.query(TABLE_QUESTION,
+//                        new String[] {COLUMN_QUESTION_ID, COLUMN_QUESTION_TEXT},
+//                        " id = ?",
+//                        new String[] { String.valueOf(id) },
+//                        null,
+//                        null,
+//                        null,
+//                        null);
+//
+//
+//        if (cursor != null)
+//            cursor.moveToFirst();
+//
+//        Category category = new Category();
+//        category.setId(Integer.parseInt(cursor.getString(0)));
+//        category.setName(cursor.getString(1));
+//
+//        Log.d("getCategory(" + id + ")", category.toString());
+//
+//        return category;
+//    }
 }
