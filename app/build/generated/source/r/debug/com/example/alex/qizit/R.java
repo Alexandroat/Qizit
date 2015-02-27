@@ -1722,10 +1722,10 @@ containing a value of this type.
         public static final int tv=0x7f020070;
     }
     public static final class id {
-        public static final int About_us=0x7f0a0089;
-        public static final int How_Play=0x7f0a0088;
+        public static final int About_us=0x7f0a008a;
+        public static final int How_Play=0x7f0a0089;
         public static final int LoginButton=0x7f0a0083;
-        public static final int Progress=0x7f0a0087;
+        public static final int Progress=0x7f0a0088;
         public static final int action_bar=0x7f0a0045;
         public static final int action_bar_activity_content=0x7f0a0000;
         public static final int action_bar_container=0x7f0a0044;
@@ -1750,6 +1750,7 @@ containing a value of this type.
         public static final int buyButton=0x7f0a0028;
         public static final int buy_now=0x7f0a002c;
         public static final int buy_with_google=0x7f0a002d;
+        public static final int camara=0x7f0a0087;
         public static final int checkbox=0x7f0a003d;
         public static final int classic=0x7f0a002f;
         public static final int collapseActionView=0x7f0a001c;
@@ -1790,7 +1791,7 @@ containing a value of this type.
         public static final int listMode=0x7f0a0009;
         public static final int list_item=0x7f0a0039;
         public static final int loginButton=0x7f0a0069;
-        public static final int logout=0x7f0a008a;
+        public static final int logout=0x7f0a008b;
         public static final int match_parent=0x7f0a002a;
         public static final int middle=0x7f0a0015;
         public static final int monochrome=0x7f0a0031;

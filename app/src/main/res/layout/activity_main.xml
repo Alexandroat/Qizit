@@ -47,7 +47,8 @@
             android:gravity="center"
             android:text="@string/onePlayer"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="27sp" />
+            android:textSize="27sp"
+            android:textColor="#dcffb248" />
 
     </LinearLayout>
 
@@ -76,7 +77,8 @@
             android:layout_weight="1"
             android:text="@string/multiplayer"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="27dp" />
+            android:textSize="27dp"
+            android:textColor="#dcffb248" />
 
     </LinearLayout>
 
@@ -106,7 +108,8 @@
             android:gravity="center"
             android:text="@string/time"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="27dp" />
+            android:textSize="27dp"
+            android:textColor="#dcffb248" />
 
     </LinearLayout>
 

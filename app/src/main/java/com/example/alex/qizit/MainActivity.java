@@ -22,9 +22,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String fontPath2 ="fonts/LeckerliOne-Regular.ttf";
-        TextView tv = (TextView) findViewById(R.id.welcome);
+        TextView tv = (TextView) findViewById(R.id.opnePlayer);
+        TextView tv1 = (TextView) findViewById(R.id.multi);
+        TextView tv2 = (TextView) findViewById(R.id.timeText);
         Typeface tf= Typeface.createFromAsset(getAssets(), fontPath2);
         tv.setTypeface(tf);
+        tv1.setTypeface(tf);
+        tv2.setTypeface(tf);
         /*
          * Creation of the Database
          */

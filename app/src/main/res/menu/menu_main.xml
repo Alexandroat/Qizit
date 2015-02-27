@@ -2,11 +2,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/camara"
+        android:showAsAction="always"
+        android:icon="@drawable/art"
+        android:title="camara"
+        tools:ignore="AppCompatResource" />
+
     <item
         android:id="@+id/Progress"
         android:title="@string/action_progress"
