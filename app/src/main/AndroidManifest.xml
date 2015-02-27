@@ -47,6 +47,10 @@
             android:name=".Puntuations"
             android:label="@string/title_activity_puntuations" >
         </activity>
+        <activity
+            android:name=".PlayNormal"
+            android:label="@string/title_activity_play_normal" >
+        </activity>
     </application>
 
 </manifest>

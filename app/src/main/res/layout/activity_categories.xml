@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/gamecontroller" />
+            android:src="@drawable/gamecontroller"
+            android:clickable="true" />
 
         <ImageView
             android:id="@+id/imageView20"

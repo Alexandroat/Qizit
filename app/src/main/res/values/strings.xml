@@ -31,5 +31,6 @@
     <string name="category_literature">Literatura</string>
     <string name="title_activity_puntuations">Puntuations</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_play_normal">PlayNormal</string>
 
 </resources>

@@ -57,6 +57,8 @@ public class LoginActivity extends Activity {
                             // Hooray! The user is logged in.
                             Intent main = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(main);
+                            Toast toasts = Toast.makeText(getApplication(), "Login OK", Toast.LENGTH_SHORT);
+                            toasts.show();
                             Toast toast = Toast.makeText(getApplicationContext(), "Login OK", Toast.LENGTH_SHORT);
                             toast.show();
                             finish();

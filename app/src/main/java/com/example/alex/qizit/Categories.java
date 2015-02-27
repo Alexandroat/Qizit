@@ -1,9 +1,11 @@
 package com.example.alex.qizit;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 //
 public class Categories extends ActionBarActivity {
@@ -35,5 +37,11 @@ public class Categories extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void onClickPlay(View view){
+        Intent playNormal = new Intent().setClass(Categories.this, PlayNormal.class);
+        startActivity(playNormal);
     }
 }

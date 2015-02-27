@@ -249,4 +249,32 @@ public class DatabaseManager {
 
         return category;
     }
+
+
+
+
+        //va??
+    public int getMaxIdQuestion(){
+        String countQuery = "SELECT  * FROM " + TABLE_QUESTION;
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int cnt = cursor.getCount();
+        cursor.close();
+        return cnt;
+    }
+
+    //va??
+    public void getAnswersOfQuestion(int idQuestion){
+        String getAnswersOfQuestionQuery = "SELECT * FROM " + TABLE_ANSWER + " WHERE " + COLUMN_ANSWER_FK_QUESTION + " = " + idQuestion;
+
+        Cursor cursor = db.rawQuery(getAnswersOfQuestionQuery, null);
+        Answer[] answers=new Answer[cursor.getCount()];
+
+
+        for(int i = 0; i<cursor.getCount(); i++){
+   // answers[i]= new Answer(cursor.get, cursor.getString(2), cursor.getInt(3))
+        }
+
+    }
+
+
 }

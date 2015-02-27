@@ -28,7 +28,8 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:onClick="OnClick"
-        android:id="@+id/onePlayerBtn">
+        android:id="@+id/onePlayerBtn"
+        android:clickable="true">
 
         <ImageView
             android:id="@+id/play"
