@@ -262,6 +262,8 @@ public class DatabaseManager {
         return cnt;
     }
 
+
+
     //va??
     public void getAnswersOfQuestion(int idQuestion){
         String getAnswersOfQuestionQuery = "SELECT * FROM " + TABLE_ANSWER + " WHERE " + COLUMN_ANSWER_FK_QUESTION + " = " + idQuestion;
@@ -271,7 +273,8 @@ public class DatabaseManager {
 
 
         for(int i = 0; i<cursor.getCount(); i++){
-   // answers[i]= new Answer(cursor.get, cursor.getString(2), cursor.getInt(3))
+    answers[i]= new Answer(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getString(3).equals("true"));
+
         }
 
     }
