@@ -16,24 +16,29 @@
                 android:id="@+id/action_settings"
                 android:orderInCategory="100"
                 android:title="@string/action_settings"
+                android:icon="@drawable/tools"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/Progress"
                 android:title="@string/action_progress"
-                app:showAsAction="never" />
+                app:showAsAction="never"
+                android:icon="@drawable/progress"/>
             <item
                 android:id="@+id/How_Play"
                 android:title="@string/action_howToPlay"
-                app:showAsAction="never" />
+                app:showAsAction="never"
+                android:icon="@drawable/how_to_play"/>
 
             <item
                 android:id="@+id/About_us"
                 android:title="@string/action_aboutUs"
-                app:showAsAction="never" />
+                app:showAsAction="never"
+                android:icon="@drawable/about_us"/>
             <item
                 android:id="@+id/logout"
                 android:title="@string/menu_logout_text"
-                app:showAsAction="never" />
+                app:showAsAction="never"
+                android:icon="@drawable/power"/>
         </menu>
 
     </item>

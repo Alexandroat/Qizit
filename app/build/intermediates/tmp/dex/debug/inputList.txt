@@ -1,10 +1,10 @@
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\classes\debug
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-8e6b696993ef4316ee242388aa12189302e2679d.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-be6c6597a0d95b27a5fb1868fd14266da4786901.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\ParseCrashReporting-1.8.1-dd04fa36709dcc893c3112ab5f5f801cbcf8fded.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-21ad8eb5e606acbe9982f65a96ed099727011f75.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-javadoc-bf5cde81e59ee2affad1b3a1cca64e52a5083582.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\classes-55d4ecf49686450ad253daed9bbeb703f9f2f533.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\Parse-1.8.1-3eb633ee896e3e7b84f62be19a8dddb2f870ee5b.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\classes-fa97f8ec86c071cda0a304c98bb8138f19a55192.jar
-C:\Users\VLad\AndroidStudioProjects\Qizit\app\build\intermediates\pre-dexed\debug\classes-6e5aac73856bbdafc3ae1b2d7fc5b1e3aa4f18fd.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/classes/debug
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-3a7dbd5c7ec6f0672da67ed7540522e94746840e.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-cdcbb79c448ff949ecbaed30bc8c62379b1b597f.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.1-e3029794fcc291c29723adc360facc25344a6a55.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-2287db10c324ad6d59f7b7f7ac63e1689bcce146.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-javadoc-365bcdb941ce1ad84f1cfbef64c8a4b144e0e71d.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/classes-4ac30b48660f7f4cb95fceda8420e7e387ae05a7.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/Parse-1.8.1-2971a0b2060e22473bbf7130a7ac5edf8a1a1dc2.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/classes-87478c390b49278855ef7f622d252a586c0091e1.jar
+/Users/David/Desktop/probar app git/Qizit/app/build/intermediates/pre-dexed/debug/classes-ea0307de4aef77a1147a24fe62a96725254a2090.jar
