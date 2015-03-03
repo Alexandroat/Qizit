@@ -2,25 +2,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/ajustes"
+        android:icon="@drawable/gear"
+        android:title="Ajustes"
+        app:showAsAction="always"
+        android:orderInCategory="2">
+
+
+        <menu>
+            <item
+                android:id="@+id/action_settings"
+                android:orderInCategory="100"
+                android:title="@string/action_settings"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/Progress"
+                android:title="@string/action_progress"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/How_Play"
+                android:title="@string/action_howToPlay"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/About_us"
+                android:title="@string/action_aboutUs"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/logout"
+                android:title="@string/menu_logout_text"
+                app:showAsAction="never" />
+        </menu>
+
+    </item>
+
     <item
-        android:id="@+id/Progress"
-        android:title="@string/action_progress"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/How_Play"
-        android:title="@string/action_howToPlay"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/About_us"
-        android:title="@string/action_aboutUs"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/logout"
-        android:title="@string/menu_logout_text"
-        app:showAsAction="never" />
+        android:id="@+id/share"
+        android:title="Share"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/abc_ic_menu_share_mtrl_alpha"
+        android:orderInCategory="1"
+
+    />
 </menu>

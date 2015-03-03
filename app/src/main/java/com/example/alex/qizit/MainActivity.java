@@ -59,6 +59,15 @@ public class MainActivity extends ActionBarActivity {
         startActivity(categories);
     }
 
+       public void onClickShare(){
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = "Check this new AndronymusQUIZIT!!";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,6 +94,9 @@ public class MainActivity extends ActionBarActivity {
             ParseUser.logOut();
             finish();
 
+        }
+        if (id == R.id.share) {
+            onClickShare();
         }
 
 

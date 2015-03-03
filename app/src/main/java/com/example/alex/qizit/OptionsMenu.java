@@ -29,6 +29,12 @@ public class OptionsMenu extends ActionBarActivity {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
     }
+
+    public OptionsMenu() {
+    }
+
+
+
     static {
         PREFERENCIA = "editTextPref";
     }
