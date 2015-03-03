@@ -17,23 +17,22 @@ import com.parse.ParseUser;
 
 public class MainActivity extends ActionBarActivity {
 
+    DatabaseManager dbm;
+    LoadInfo loadInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String fontPath2 ="fonts/LeckerliOne-Regular.ttf";
-       /* TextView tv = (TextView) findViewById(R.id.welcome);
-        Typeface tf= Typeface.createFromAsset(getAssets(), fontPath2);
-        tv.setTypeface(tf);*/
+
         /*
          * Creation of the Database
          */
-        DbHelper helper = new DbHelper(this);
-        SQLiteDatabase db = helper.getWritableDatabase();
-        DatabaseManager dbm = new DatabaseManager(this);
-        dbm.createCategory(new Category("Tele"));
-        //dbm.createQuestion(new Question());
-        //dbm.createAnswer(new Answer());
+        dbm = new DatabaseManager(this);
+        loadInfo = new LoadInfo(dbm);
+
+
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
@@ -91,6 +90,8 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }

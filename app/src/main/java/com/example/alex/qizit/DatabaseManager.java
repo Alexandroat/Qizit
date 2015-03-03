@@ -17,26 +17,26 @@ public class DatabaseManager {
      */
 
     //QUESTION
-    static final String TABLE_QUESTION = "QUESTION";
-    static final String COLUMN_QUESTION_ID = "_id";
-    static final String COLUMN_QUESTION_TEXT = "QUESTION_TEXT";
-    static final String COLUMN_QUESTION_FK_CATEGORY = "FK_CATEGORY";
-    static final String COLUMN_QUESTION_DIFFICULTY = "DIFFICULTY";
+    public static final String TABLE_QUESTION = "QUESTION";
+    public static final String COLUMN_QUESTION_ID = "_id";
+    public static final String COLUMN_QUESTION_TEXT = "QUESTION_TEXT";
+    public static final String COLUMN_QUESTION_FK_CATEGORY = "FK_CATEGORY";
+    public static final String COLUMN_QUESTION_DIFFICULTY = "DIFFICULTY";
     //ANSWER
-    static final String TABLE_ANSWER = "ANSWER";
-    static final String COLUMN_ANSWER_ID = "_id";
-    static final String COLUMN_ANSWER_TEXT = "ANSWER_TEXT";
-    static final String COLUMN_ANSWER_FK_QUESTION = "FK_QUESTION";
-    static final String COLUMN_ANSWER_ISTRUE = "IS_TRUE";
+    public static final String TABLE_ANSWER = "ANSWER";
+    public static final String COLUMN_ANSWER_ID = "_id";
+    public static final String COLUMN_ANSWER_TEXT = "ANSWER_TEXT";
+    public static final String COLUMN_ANSWER_FK_QUESTION = "FK_QUESTION";
+    public static final String COLUMN_ANSWER_ISTRUE = "IS_TRUE";
     //CATEGORY
-    static final String TABLE_CATEGORIES = "CATEGORY";
-    static final String COLUMN_CATEGORY_ID = "_id";
-    static final String COLUMN_CATEGORY_TEXT = "CATEGORY_TEXT";
+    public static final String TABLE_CATEGORIES = "CATEGORY";
+    public static final String COLUMN_CATEGORY_ID = "_id";
+    public static final String COLUMN_CATEGORY_TEXT = "CATEGORY_TEXT";
 
     /*
       *Create Tables
       */
-    static final String CREATE_TABLE_QUESTION = "CREATE TABLE " + TABLE_QUESTION +
+    public static final String CREATE_TABLE_QUESTION = "CREATE TABLE " + TABLE_QUESTION +
             "(" + COLUMN_QUESTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_QUESTION_TEXT + " TEXT NOT NULL, "
             + COLUMN_QUESTION_FK_CATEGORY + " INTEGER NOT NULL, "
@@ -44,7 +44,7 @@ public class DatabaseManager {
             + COLUMN_QUESTION_FK_CATEGORY + " ) REFERENCES "
             + TABLE_CATEGORIES + " ( " + COLUMN_CATEGORY_ID + " ) );";
 
-    static final String CREATE_TABLE_ANSWER = "CREATE TABLE " + TABLE_ANSWER +
+    public static final String CREATE_TABLE_ANSWER = "CREATE TABLE " + TABLE_ANSWER +
             "(" + COLUMN_ANSWER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_ANSWER_TEXT + " TEXT NOT NULL, "
             + COLUMN_ANSWER_FK_QUESTION + " INTEGER NOT NULL, "
@@ -52,10 +52,11 @@ public class DatabaseManager {
             + COLUMN_ANSWER_FK_QUESTION + ") REFERENCES "
             + TABLE_QUESTION + " ( " + COLUMN_QUESTION_ID + " ) );";
 
-    static final String CREATE_TABLE_CATEGORY = "CREATE TABLE " + TABLE_CATEGORIES +
+    public static final String CREATE_TABLE_CATEGORY = "CREATE TABLE " + TABLE_CATEGORIES +
             "(" + COLUMN_CATEGORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_CATEGORY_TEXT + " TEXT NOT NULL );";
 
+    // Constructor
     public DatabaseManager(Context context) {
 
         helper = new DbHelper(context);
@@ -76,7 +77,7 @@ public class DatabaseManager {
         ContentValues questionValues = new ContentValues();
         questionValues.put(COLUMN_QUESTION_TEXT, question.getQuestionText());
         questionValues.put(COLUMN_QUESTION_FK_CATEGORY, question.getFkCategory());
-        questionValues.put(COLUMN_QUESTION_DIFFICULTY, question.getDificulty());
+        questionValues.put(COLUMN_QUESTION_DIFFICULTY, question.getDifficulty());
 
         database.insert(TABLE_QUESTION, null, questionValues);
         database.setTransactionSuccessful();
@@ -89,9 +90,9 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, answer.getAnswerText());
-        questionValues.put(COLUMN_QUESTION_FK_CATEGORY, answer.getFkQuestion());
-        questionValues.put(COLUMN_QUESTION_DIFFICULTY, answer.getIsTrue());
+        questionValues.put(COLUMN_ANSWER_TEXT, answer.getAnswerText());
+        questionValues.put(COLUMN_ANSWER_FK_QUESTION, answer.getFkQuestion());
+        questionValues.put(COLUMN_ANSWER_ISTRUE, answer.getIsTrue());
 
         database.insert(TABLE_ANSWER, null, questionValues);
         database.setTransactionSuccessful();
@@ -104,7 +105,7 @@ public class DatabaseManager {
         SQLiteDatabase database = openWriteable();
         database.beginTransaction();
         ContentValues questionValues = new ContentValues();
-        questionValues.put(COLUMN_QUESTION_TEXT, category.getName());
+        questionValues.put(COLUMN_CATEGORY_TEXT, category.getName());
 
         database.insert(TABLE_CATEGORIES, null, questionValues);
         database.setTransactionSuccessful();
@@ -113,52 +114,52 @@ public class DatabaseManager {
 
     }
 
-    public void deleteQuestion(int questionId) {
-        SQLiteDatabase database = openWriteable();
-        database.beginTransaction();
-        database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, questionId),
-                null);
-        database.delete(TABLE_QUESTION,
-                String.format("%s=%d", COLUMN_QUESTION_ID, questionId),
-                null);
-
-        database.setTransactionSuccessful();
-        database.endTransaction();
-        closeDb(database);
-    }
-
-    public void deleteAnswer(int answerId) {
-        SQLiteDatabase database = openWriteable();
-        database.beginTransaction();
-        database.delete(TABLE_QUESTION,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, answerId),
-                null);
-        database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_ID, answerId),
-                null);
-        database.setTransactionSuccessful();
-        database.endTransaction();
-        closeDb(database);
-    }
-
-    public void deleteCategory(int categoryId) {
-        SQLiteDatabase database = openWriteable();
-        database.beginTransaction();
-        database.delete(TABLE_QUESTION,
-                String.format("%s=%d", COLUMN_QUESTION_FK_CATEGORY, categoryId),
-                null);
-        database.delete(TABLE_ANSWER,
-                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, categoryId),
-                null);
-        database.delete(TABLE_CATEGORIES,
-                String.format("%s=%d", COLUMN_CATEGORY_ID, categoryId),
-                null);
-        database.setTransactionSuccessful();
-        database.endTransaction();
-        closeDb(database);
-    }
-
+//    public void deleteQuestion(int questionId) {
+//        SQLiteDatabase database = openWriteable();
+//        database.beginTransaction();
+//        database.delete(TABLE_ANSWER,
+//                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, questionId),
+//                null);
+//        database.delete(TABLE_QUESTION,
+//                String.format("%s=%d", COLUMN_QUESTION_ID, questionId),
+//                null);
+//
+//        database.setTransactionSuccessful();
+//        database.endTransaction();
+//        closeDb(database);
+//    }
+//
+//    public void deleteAnswer(int answerId) {
+//        SQLiteDatabase database = openWriteable();
+//        database.beginTransaction();
+//        database.delete(TABLE_QUESTION,
+//                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, answerId),
+//                null);
+//        database.delete(TABLE_ANSWER,
+//                String.format("%s=%d", COLUMN_ANSWER_ID, answerId),
+//                null);
+//        database.setTransactionSuccessful();
+//        database.endTransaction();
+//        closeDb(database);
+//    }
+//
+//    public void deleteCategory(int categoryId) {
+//        SQLiteDatabase database = openWriteable();
+//        database.beginTransaction();
+//        database.delete(TABLE_QUESTION,
+//                String.format("%s=%d", COLUMN_QUESTION_FK_CATEGORY, categoryId),
+//                null);
+//        database.delete(TABLE_ANSWER,
+//                String.format("%s=%d", COLUMN_ANSWER_FK_QUESTION, categoryId),
+//                null);
+//        database.delete(TABLE_CATEGORIES,
+//                String.format("%s=%d", COLUMN_CATEGORY_ID, categoryId),
+//                null);
+//        database.setTransactionSuccessful();
+//        database.endTransaction();
+//        closeDb(database);
+//    }
+//
     public Question getQuestion(int id){
 
         SQLiteDatabase db = openWriteable();
@@ -166,7 +167,7 @@ public class DatabaseManager {
         Cursor cursor =
                 db.query(TABLE_QUESTION,
                         new String[] {COLUMN_QUESTION_ID, COLUMN_QUESTION_TEXT, COLUMN_QUESTION_FK_CATEGORY, COLUMN_QUESTION_DIFFICULTY},
-                        " id = ?",
+                        " _id = ?",
                         new String[] { String.valueOf(id) },
                         null,
                         null,
@@ -181,11 +182,11 @@ public class DatabaseManager {
         question.setId(Integer.parseInt(cursor.getString(0)));
         question.setQuestionText(cursor.getString(1));
         question.setFkCategory(Integer.parseInt(cursor.getString(2)));
-        question.setDificulty(cursor.getString(3));
+        question.setDifficulty(cursor.getString(3));
 
 
         Log.d("getQuestion(" + id + ")", question.toString());
-
+        closeDb(db);
         return question;
     }
 
@@ -196,7 +197,7 @@ public class DatabaseManager {
         Cursor cursor =
                 db.query(TABLE_ANSWER,
                         new String[] {COLUMN_ANSWER_ID, COLUMN_ANSWER_TEXT, COLUMN_ANSWER_FK_QUESTION, COLUMN_ANSWER_ISTRUE},
-                        " id = ?",
+                        " _id = ?",
                         new String[] { String.valueOf(id) },
                         null,
                         null,
@@ -215,7 +216,7 @@ public class DatabaseManager {
 
 
         Log.d("getAnswer(" + id + ")", answer.toString());
-
+        closeDb(db);
         return answer;
     }
 
@@ -226,7 +227,7 @@ public class DatabaseManager {
         Cursor cursor =
                 db.query(TABLE_QUESTION,
                         new String[] {COLUMN_QUESTION_ID, COLUMN_QUESTION_TEXT},
-                        " id = ?",
+                        " _id = ?",
                         new String[] { String.valueOf(id) },
                         null,
                         null,
@@ -242,7 +243,12 @@ public class DatabaseManager {
         category.setName(cursor.getString(1));
 
         Log.d("getCategory(" + id + ")", category.toString());
-
+        closeDb(db);
         return category;
     }
+
+    public DbHelper getDeDbHelper (){
+        return helper;
+    }
+
 }

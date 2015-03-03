@@ -5,27 +5,25 @@ import java.io.Serializable;
 public class Question implements Serializable {
     private static final long serialVersionUID = 1L;
     int id;
-    String categoryText;
+
     String questionText;
     int fkCategory;
-    String dificulty;
+    String difficulty;
 
-    public Question(int id, String categoryText, String questionText,
-                    int fkCategory, String dificulty) {
-        this.id = id;
-        this.categoryText = categoryText;
+    public Question( String questionText,
+                    int fkCategory, String difficulty) {
+
         this.questionText = questionText;
         this.fkCategory = fkCategory;
-        this.dificulty = dificulty;
+        this.difficulty = difficulty;
     }
 
 
     public Question() {
         this.id = 0;
-        this.categoryText = "";
         this.questionText = "";
         this.fkCategory = 0;
-        this.dificulty = "";
+        this.difficulty = "";
     }
 
 
@@ -35,14 +33,6 @@ public class Question implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getCategoryText() {
-        return categoryText;
-    }
-
-    public void setCategoryText(String categoryText) {
-        this.categoryText = categoryText;
     }
 
     public String getQuestionText() {
@@ -61,27 +51,25 @@ public class Question implements Serializable {
         this.fkCategory = fkCategory;
     }
 
-    public String getDificulty() {
-        return dificulty;
+    public String getDifficulty() {
+        return difficulty;
     }
 
-    public void setDificulty(String dificulty) {
-        this.dificulty = dificulty;
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 
     public String toString() {
-        return "Question [id=" + id + ", categoryText=" + categoryText
+        return "Question [id=" + id
                 + ", questionText=" + questionText + ", fkCategory="
-                + fkCategory + ", dificulty=" + dificulty + "]";
+                + fkCategory + ", difficulty=" + difficulty + "]";
     }
 
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result
-                + ((categoryText == null) ? 0 : categoryText.hashCode());
-        result = prime * result
-                + ((dificulty == null) ? 0 : dificulty.hashCode());
+                + ((difficulty == null) ? 0 : difficulty.hashCode());
         result = prime * result + fkCategory;
         result = prime * result + id;
         result = prime * result
@@ -97,15 +85,10 @@ public class Question implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Question other = (Question) obj;
-        if (categoryText == null) {
-            if (other.categoryText != null)
+        if (difficulty == null) {
+            if (other.difficulty != null)
                 return false;
-        } else if (!categoryText.equals(other.categoryText))
-            return false;
-        if (dificulty == null) {
-            if (other.dificulty != null)
-                return false;
-        } else if (!dificulty.equals(other.dificulty))
+        } else if (!difficulty.equals(other.difficulty))
             return false;
         if (fkCategory != other.fkCategory)
             return false;
