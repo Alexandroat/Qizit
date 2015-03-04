@@ -42,7 +42,8 @@
             android:layout_marginTop="12sp"
             android:onClick="SignUpButton"
             android:text="Sign Up"
-            style="@style/button_style"/>
+            style="@style/button_style"
+            android:background="#4CAF50" />
 
         <Button
             android:id="@+id/LoginButton"

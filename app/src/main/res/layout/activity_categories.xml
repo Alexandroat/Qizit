@@ -51,7 +51,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_videogames"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/textView2"
@@ -61,7 +62,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_cinema"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/textView"
@@ -71,7 +73,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/cetegory_tv"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 
@@ -119,7 +122,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_music"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/textView5"
@@ -129,7 +133,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_tecnology"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/textView6"
@@ -139,7 +144,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_science"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 
@@ -187,7 +193,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_world"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/textView8"
@@ -197,7 +204,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_art"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/textView9"
@@ -207,7 +215,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/category_literature"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 
