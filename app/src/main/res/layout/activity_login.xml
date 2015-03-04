@@ -1,89 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/idLoginRelative"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff5cffad"
-    android:id="@+id/">
+    android:background="@drawable/quizbackgroundblue"
+    android:gravity="center|center_vertical|center_horizontal"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/idLoginLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/login"
-        android:textSize="30sp"
-        android:paddingLeft="15dp"
-        android:textColor="#ff040404"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:background="@drawable/quizbuttongreen"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuario"
-        android:id="@+id/textView"
-        android:layout_marginTop="40dp"
-        android:textSize="30sp"
-        android:layout_below="@+id/login"
-        android:layout_alignLeft="@+id/login"
-        android:layout_alignStart="@+id/login" />
+        <EditText
+            android:id="@+id/userNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_alignLeft="@+id/userNameTextView"
+            android:layout_alignStart="@+id/userNameTextView"
+            android:layout_below="@+id/userNameTextView"
+            android:layout_marginTop="20sp"
+            android:layout_weight="0.10"
+            android:clickable="true"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:padding="10sp"
+            android:text="user"
+            android:textSize="30sp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="UserName"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:background="#ffcfffb8"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        <EditText
+            android:id="@+id/passWordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_alignLeft="@+id/passWordTextView"
+            android:layout_alignStart="@+id/passWordTextView"
+            android:layout_below="@+id/passWordTextView"
+            android:layout_weight="0.10"
+            android:clickable="true"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPassword"
+            android:padding="10sp"
+            android:text="pass"
+            android:textSize="30sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contraseña"
-        android:id="@+id/textView2"
-        android:layout_marginTop="42dp"
-        android:textSize="30sp"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_alignLeft="@+id/passWordEditText"
+            android:layout_alignStart="@+id/passWordEditText"
+            android:layout_below="@+id/passWordEditText"
+            android:background="@drawable/quizbuttongreen"
+            android:clickable="true"
+            android:gravity="center"
+            android:nestedScrollingEnabled="false"
+            android:onClick="LoginIntoParse"
+            android:text="login"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:background="#ffcfffb8"
-        android:text="password"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_below="@+id/loginButton"
+            android:layout_toEndOf="@+id/passWordTextView"
+            android:layout_toRightOf="@+id/passWordTextView"
+            android:background="@drawable/quizbuttonorange"
+            android:gravity="center"
+            android:onClick="ShowSignUpActivity"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crear Usuario"
-        android:id="@+id/newuser"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/enter"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:onClick="Register" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ok"
-        android:id="@+id/enter"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="37dp" />
+    </LinearLayout>
 </RelativeLayout>
