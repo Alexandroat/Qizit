@@ -4,11 +4,12 @@
     <style name="AppTheme" parent="@style/CustomActionBarTheme"/>
 
     <!-- Login and Sing Up theme -->
-    <style name="loginSingUp_style" parent="appBackground_style">
+    <style name="loginSingUp_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center|center_vertical|center_horizontal</item>
         <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/logo2</item>
     </style>
     
     <!-- Edit Text theme -->

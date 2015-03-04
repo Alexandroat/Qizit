@@ -26,7 +26,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // TODO Externalizar en una clase
-        String fontPath="fonts/LeckerliOne-Regular.ttf";
+        /*String fontPath="fonts/Roboto-Light.ttf";
         String fontPath1="fonts/days.ttf";
         EditText et= (EditText) findViewById(R.id.userNameEditText);
         EditText et1 = (EditText) findViewById(R.id.passWordEditText);
@@ -37,7 +37,7 @@ public class LoginActivity extends Activity {
         txt.setTypeface(tf);
         txt1.setTypeface(tf);
         et.setTypeface(tf1);
-        et1.setTypeface(tf1);
+        et1.setTypeface(tf1);*/
 
     }
 

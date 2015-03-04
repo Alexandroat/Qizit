@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/idRelativeLayout"
-    style="@style/loginSingUp_style">
+    style="@style/loginSingUp_style"
+    >
 
     <LinearLayout
         android:id="@+id/idLinearLayout"
@@ -18,7 +19,8 @@
             android:id="@+id/userNameEditText"
             android:inputType="textPersonName"
             android:hint="user"
-            style="@style/editText_style"/>
+            style="@style/editText_style"
+            android:layout_marginTop="250dp" />
 
         <EditText
             android:id="@+id/passWordEditText"
