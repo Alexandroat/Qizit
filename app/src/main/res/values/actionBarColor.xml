@@ -10,9 +10,9 @@
 
     <!-- ActionBar styles -->
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/actionbar_background</item>
+        <item name="android:background">@drawable/gggrr</item>
 
         <!-- Support library compatibility -->
-        <item name="background">@drawable/actionbar_background</item>
+        <item name="background">@drawable/gggrr</item>
     </style>
 </resources>
