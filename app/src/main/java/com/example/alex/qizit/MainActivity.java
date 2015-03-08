@@ -144,4 +144,12 @@ public class MainActivity extends ActionBarActivity {
         notif.flags = Notification.FLAG_AUTO_CANCEL;
     }
 
+
+
+    public void OnClickPlayNormal(View v) {
+
+        Intent playNormal = new Intent().setClass(MainActivity.this, PlayNormal.class);
+        startActivity(playNormal);
+    }
+
 }

@@ -36,7 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
 
-            android:src="@drawable/play" />
+            android:src="@drawable/play"
+            android:clickable="true"
+            android:onClick="OnClickPlayNormal" />
 
         <TextView
             android:id="@+id/opnePlayer"

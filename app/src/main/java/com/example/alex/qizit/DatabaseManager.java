@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * Created by alejandro on 08/02/15.
  */
@@ -190,7 +192,7 @@ public class DatabaseManager {
         return question;
     }
 
-    public Answer getAnswer(int id){
+    public Answer getAnswerByIdAnswer(int idAnswer){
 
         SQLiteDatabase db = openWriteable();
 
@@ -198,7 +200,7 @@ public class DatabaseManager {
                 db.query(TABLE_ANSWER,
                         new String[] {COLUMN_ANSWER_ID, COLUMN_ANSWER_TEXT, COLUMN_ANSWER_FK_QUESTION, COLUMN_ANSWER_ISTRUE},
                         " _id = ?",
-                        new String[] { String.valueOf(id) },
+                        new String[] { String.valueOf(idAnswer) },
                         null,
                         null,
                         null,
@@ -215,7 +217,7 @@ public class DatabaseManager {
         answer.setIsTrue(Boolean.parseBoolean(cursor.getString(3)));
 
 
-        Log.d("getAnswer(" + id + ")", answer.toString());
+        Log.d("getAnswer(" + idAnswer + ")", answer.toString());
         closeDb(db);
         return answer;
     }
@@ -251,4 +253,78 @@ public class DatabaseManager {
         return helper;
     }
 
-}
+
+
+
+
+
+    public int getMaxNumQuestion(){
+        SQLiteDatabase db = openWriteable();
+        String countQuery = "SELECT _id FROM " + TABLE_QUESTION;
+
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int cnt = cursor.getCount();
+        cursor.close();
+        return cnt;
+
+    }
+
+    public ArrayList <Answer> getAnswer (int idQuestion){
+        boolean isTrue = false;
+        SQLiteDatabase db = openWriteable();
+        ArrayList <Answer> answers = new ArrayList<Answer>();
+
+        Cursor cursor =
+                db.query(TABLE_ANSWER,
+                        new String[] {COLUMN_ANSWER_ID, COLUMN_ANSWER_TEXT, COLUMN_ANSWER_FK_QUESTION, COLUMN_ANSWER_ISTRUE},
+                        COLUMN_ANSWER_FK_QUESTION + " = ?",
+                        new String[] { String.valueOf(idQuestion) },
+                        null,
+                        null,
+                        null,
+                        null);
+
+        if (cursor.moveToFirst()){
+            do{
+                Answer answer = new Answer(
+                        getStringFromColumnName(cursor, COLUMN_ANSWER_TEXT),
+                        getIntFromColumnName(cursor,COLUMN_ANSWER_FK_QUESTION),
+                        isTrue);
+                if (cursor.getInt(3) == 1){
+                    isTrue = true;
+                } else {
+                    isTrue = false;
+                }
+                answer.setId(Integer.parseInt(cursor.getString(0)));
+                answer.setIsTrue(isTrue);
+
+
+
+                answers.add(answer);
+
+                Log.d("getAnswer(" + idQuestion + ")", answer.toString());
+
+            } while (cursor.moveToNext());
+        }
+
+
+
+        closeDb(db);
+        return answers;
+    }
+
+    private int getIntFromColumnName (Cursor cursor, String columnName){
+        int columnIndex = cursor.getColumnIndex(columnName);
+        return cursor.getInt(columnIndex);
+    }
+
+    private String getStringFromColumnName (Cursor cursor, String columnName){
+        int columnIndex = cursor.getColumnIndex(columnName);
+        return cursor.getString(columnIndex);
+    }
+
+
+
+
+}//end class
+
