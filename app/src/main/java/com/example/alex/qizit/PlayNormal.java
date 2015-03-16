@@ -1,6 +1,5 @@
 package com.example.alex.qizit;
 
-import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,16 +12,17 @@ import java.util.ArrayList;
 
 
 public class PlayNormal extends ActionBarActivity {
-
-    EditText editTextQuestion;
-    Button buttonAnswer1;
-    Button buttonAnswer2;
-    Button buttonAnswer3;
-    Button buttonAnswer4;
-
-    DatabaseManager databaseManager;
-    Question question;
-    Answer answer;
+    // TODO: Controlar que al girar la pantalla no se cambien las preguntas
+    private EditText editTextQuestion;
+    private Button buttonAnswer1;
+    private Button buttonAnswer2;
+    private Button buttonAnswer3;
+    private Button buttonAnswer4;
+    private DatabaseManager databaseManager;
+    private Question question;
+    private boolean isTrue = false;
+    private ArrayList<Answer> answers;
+    private ArrayList<Button> buttons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,86 @@ public class PlayNormal extends ActionBarActivity {
         buttonAnswer3 = (Button) findViewById(R.id.buttonAnswer3);
         buttonAnswer4 = (Button) findViewById(R.id.buttonAnswer4);
 
+        buttons = new ArrayList<Button>();
+        buttons.add(buttonAnswer1);
+        buttons.add(buttonAnswer2);
+        buttons.add(buttonAnswer3);
+        buttons.add(buttonAnswer4);
+
         loadQuestion();
     }
 
+    /*
+        Creates a random number between 1 and the max number of questions in the database.
+     */
+    public int createRandomNrOfQuestion() {
+        int minNumber = 1;
+        int maxNumber = databaseManager.getMaxNumQuestion();
+        int mRandom = minNumber + (int) (Math.random() * ((maxNumber - minNumber) + 1));
+        return mRandom;
+    }
+
+
+    public void loadQuestion() {
+
+        int theNumber = createRandomNrOfQuestion();
+        int i = 0;
+
+        question = databaseManager.getQuestion(theNumber);
+        String questionText = question.getQuestionText();
+        editTextQuestion.setText(questionText);
+
+
+        answers = databaseManager.getAnswer(theNumber);
+
+
+        for (Answer answer : answers) {
+
+            buttons.get(i++).setText(answer.getAnswerText());
+            System.out.println(answers.size());
+           // isTrue = answer.getIsTrue();
+
+            if (answers.size() == 2) {
+                buttonAnswer3.setVisibility(View.GONE);
+                buttonAnswer4.setVisibility(View.GONE);
+            } else {
+                buttonAnswer3.setVisibility(View.VISIBLE);
+                buttonAnswer4.setVisibility(View.VISIBLE);
+            }
+
+        }
+
+    }
+
+
+    public void onClickAnyAnswer(View view) {
+        if (buttonAnswer1 == findViewById(view.getId())) {
+            isTrue = answers.get(0).getIsTrue();
+        }
+        if (buttonAnswer2 == findViewById(view.getId())) {
+            isTrue = answers.get(1).getIsTrue();
+
+        }
+        if (buttonAnswer3 == findViewById(view.getId())) {
+            isTrue = answers.get(2).getIsTrue();
+
+        }
+        if (buttonAnswer4 == findViewById(view.getId())) {
+            isTrue = answers.get(3).getIsTrue();
+
+        }
+        nextQuestion(isTrue);
+
+    }
+
+    /*
+        Loads the next question if the contion is true
+     */
+    public void nextQuestion(boolean condition) {
+        if (condition) {
+            loadQuestion();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,57 +140,4 @@ public class PlayNormal extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    public int createRandomNrOfQuestion() {
-        int minNumber = 1;
-        int maxNumber = databaseManager.getMaxNumQuestion();
-        int mRandom = minNumber + (int) (Math.random() * ((maxNumber - minNumber) + 1));
-        return mRandom;
-    }
-
-
-    public void loadQuestion() {
-        int theNumber = createRandomNrOfQuestion();
-        Answer actualAnswer = null;
-
-        question = databaseManager.getQuestion(theNumber);
-        String questionText = question.getQuestionText();
-        editTextQuestion.setText(questionText);
-
-        ArrayList<Answer> answers;
-        answers = databaseManager.getAnswer(theNumber);
-
-/*
-        for(Answer answer1:answers){
-            buttonAnswer1.setText(answer1.getAnswerText());
-
-        }
-*/
-        try {
-
-            actualAnswer = answers.get(0);
-            buttonAnswer1.setText(actualAnswer.getAnswerText());
-
-            actualAnswer = answers.get(1);
-            buttonAnswer2.setText(actualAnswer.getAnswerText());
-
-            actualAnswer = answers.get(2);
-            buttonAnswer3.setText(actualAnswer.getAnswerText());
-
-            actualAnswer = answers.get(3);
-            buttonAnswer4.setText(actualAnswer.getAnswerText());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("error load answers");
-        }
-
-
-    }
-
-
-    public void onClickAnyAnswer(View view) {
-    }
-
-
-}//end class
+}
